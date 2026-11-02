@@ -123,8 +123,8 @@ When you let the installer change your desktop settings, it sets the interface f
 - Xfwm window decorations, with HiDPI and extra-HiDPI variants.
 - A Plank dock theme.
 - Bundled Barlow and JetBrains Mono fonts.
-- A Stark Mint wallpaper.
 - An installer and uninstaller with backups.
+- A matching wallpaper, distributed separately.
 
 Not every component has been tested on a running desktop. See [Compatibility and testing](#compatibility-and-testing) for the honest status of each.
 
@@ -166,7 +166,7 @@ chmod +x install.sh
 
 1. Copies `Stark-Mint`, `Stark-Mint-hdpi` and `Stark-Mint-xhdpi` into `~/.themes`.
 2. Installs the bundled fonts into `~/.local/share/fonts/StarkMint`.
-3. Copies the wallpaper into `~/Pictures/Stark-Mint`.
+3. Copies the wallpaper into `~/Pictures/Stark-Mint`, if you have downloaded it.
 4. Asks before changing any desktop setting.
 
 If you say no to step 4, the files are still installed but your current settings are left alone. You can then apply the theme yourself from your desktop's appearance settings.
@@ -250,7 +250,6 @@ Enable the User Themes extension before the GNOME Shell theme can be applied.
 | `Stark-Mint-hdpi/` | HiDPI Xfwm window decorations |
 | `Stark-Mint-xhdpi/` | Extra-HiDPI Xfwm window decorations |
 | `fonts/` | Bundled Barlow and JetBrains Mono fonts and their licences |
-| `wallpaper/` | Stark Mint wallpaper |
 | `preview/` | Screenshots and the design reference sheet |
 | `install.sh` | Installer and uninstaller |
 
@@ -261,6 +260,20 @@ Enable the User Themes extension before the GNOME Shell theme can be applied.
 ### Bundled
 
 Fonts only. Barlow, Barlow Semi Condensed and JetBrains Mono ship with the theme under the SIL Open Font License 1.1.
+
+### The wallpaper
+
+The Stark Mint wallpaper is distributed **separately from the theme**, as its own download. It is not part of this repository.
+
+This is deliberate. The wallpaper carries Stark Industries branding, and keeping it out of the theme package means the theme itself can be packaged and redistributed without that complication.
+
+The theme does not need the wallpaper. If you have downloaded it, place it at:
+
+```text
+wallpaper/stark-mint-wallpaper.png
+```
+
+before running the installer, and it will be installed and applied like any other component. If it is not there, the installer skips that step and everything else works normally.
 
 ### Referenced but not bundled
 
@@ -346,7 +359,7 @@ Contributions are not limited to bug fixes. Icons, GTK styling, Cinnamon compone
 
 Stark Mint is a modified version of Everforest-GTK-Theme (`Everforest-Green-Dark`) by Fausto-Korpsvart, which is licensed under the GNU General Public License version 3.
 
-The root [LICENSE](LICENSE) is the full GPL-3.0 text. It covers the theme files derived from that upstream work.
+The root [LICENSE](LICENSE) is the full GPL-3.0 text. It covers the theme files derived from that upstream work, and it also covers Stark Mint's own original files — the installer, the documentation and the preview images — which are released under **GPL-3.0** by choice.
 
 It does **not** automatically cover every file in this repository. Some components keep their own licences:
 

@@ -90,22 +90,35 @@ These were created for Stark Mint and are not derived from upstream:
 | File | What it is |
 |---|---|
 | `install.sh` | Installer and uninstaller |
-| `wallpaper/stark-mint-wallpaper.png` | Stark Mint wallpaper |
 | `preview/gtk3-widgets.png` | Screenshot of the GTK widget factory running under Stark Mint |
 | `preview/design-reference.png` | The 1.2.0 Stark Mint design reference sheet |
 | `README.md`, `DESIGN.md`, `CONTRIBUTING.md`, `CREDITS.md`, `CHANGELOG.md`, `COLOUR-REPORT.md` | Project documentation |
+| `wallpaper/stark-mint-wallpaper.png` | Stark Mint wallpaper — distributed separately, see section 7 |
 
-**Needs maintainer verification — the licence for these files is not yet stated anywhere.**
+**Licence: GNU General Public License version 3.**
 
-Because they are not derived from the upstream theme, GPL-3.0 does not reach them automatically. They currently have no declared licence, which in practice means all rights reserved.
+These files are not derived from the upstream theme, so GPL-3.0 did not reach them automatically. The maintainer has chosen to release them under GPL-3.0 as well, so that a single licence applies consistently across everything the project owns.
 
-The maintainer needs to make an explicit decision and record it. GPL-3.0 would be the simplest match for the rest of the repository. A permissive licence for `install.sh` and the documentation, with the artwork handled separately, is also reasonable. This is a decision for the maintainer, not something that should be assumed in a pull request.
+```text
+Copyright (C) 2026 the Stark Mint authors
 
-Until it is decided, a contributor cannot be certain what terms apply to a change to `install.sh` or the documentation. Resolving this should happen before the first public release.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
+
+The root `LICENSE` holds the full licence text.
 
 Note on `preview/gtk3-widgets.png`: it is a screenshot of GTK's own widget factory test program. The window contents are GTK's, not Stark Mint's. This is almost certainly fine for a theme preview, but it is the reason the file is listed here rather than treated as purely original artwork.
-
----
 
 ## 6. Referenced but not bundled
 
@@ -122,25 +135,23 @@ Users install these separately. Stark Mint makes no licensing claim over either,
 
 ---
 
-## 7. Trademark note
+## 7. Trademark note and the wallpaper
 
-**Needs maintainer decision before public release.**
+`wallpaper/stark-mint-wallpaper.png` contains the text "STARK INDUSTRIES // INDUSTRIAL LINUX". `preview/design-reference.png` uses the same name in its layout.
 
-`wallpaper/stark-mint-wallpaper.png` contains the text "STARK INDUSTRIES // INDUSTRIAL LINUX". `preview/design-reference.png` uses the same name.
+"Stark Industries" and "Iron Man" come from Marvel's Iron Man stories and are Marvel's property.
 
-"Stark Industries" and "Iron Man" come from Marvel's Iron Man stories and are Marvel's property. Personal use of a wallpaper is one thing; publishing and distributing an asset that carries the name is a different question, and it is not a question this file can settle.
+**The wallpaper is therefore distributed separately from the theme**, as its own download, rather than bundled in this repository.
 
-Options the maintainer may want to weigh:
+The reasoning:
 
-- Keep the text and accept the risk.
-- Replace the wallpaper text with something that does not use the trademarked name.
-- Ship the wallpaper separately from the theme.
+- The theme does not need the wallpaper to work. Keeping them apart means the theme can be packaged and redistributed by distributions and third parties without inheriting a branding question.
+- Anyone who wants the wallpaper can still download it and drop it into `wallpaper/` before installing. The installer picks it up if it is present and skips it if it is not.
+- It keeps the trademark exposure attached to one optional asset rather than to the whole project.
 
-The project name "Stark Mint" itself, the disclaimer in `README.md`, and the absence of any claim of affiliation all help, but none of them is legal advice and none resolves the wallpaper text.
+The wallpaper itself is GPL-3.0, like the rest of the project's original files. That covers the copyright in the artwork. It does not and cannot grant any rights in Marvel's trademarks, which is a separate matter from copyright.
 
-Stark Mint is an independent community project. It is not affiliated with, endorsed by or sponsored by Marvel, Disney, Linux Mint or the upstream theme authors.
-
----
+Stark Mint is an independent community project. It is not affiliated with, endorsed by or sponsored by Marvel, Disney, Linux Mint or the upstream theme authors. The project name, the README disclaimer and the absence of any claim of affiliation all support that, but none of this is legal advice.
 
 ## 8. Modification notice — GPL-3.0 section 5(a)
 
@@ -159,7 +170,8 @@ Modified for Stark Mint in November 2026. See `CHANGELOG.md` for the list of cha
 | `Stark-Mint/gnome-shell/gnome-shell.css` | LGPL 2.1, per its own header |
 | `Stark-Mint/plank/dock.theme` | Based on Plank; GPL-3.0 |
 | Bundled fonts | SIL Open Font License 1.1, per `fonts/OFL-*.txt` |
-| `install.sh`, documentation, wallpaper, previews | **Not yet decided** — see section 5 |
+| `install.sh`, documentation, previews | GPL-3.0, by the maintainer's decision — see section 5 |
+| Wallpaper | GPL-3.0, but distributed separately — see section 7 |
 | `Tela-circle-Dark`, `Everforest-cursors` | Not bundled; not covered |
 
 The root `LICENSE` does **not** automatically cover every file in this repository.

@@ -1,0 +1,14 @@
+--- a/install.sh
++++ b/install.sh
+@@ -243,6 +243,11 @@
+ fi
+ 
++if [ "$DO_WALL" = 1 ] && [ ! -f "$HERE/wallpaper/stark-mint-wallpaper.png" ]; then
++  DO_WALL=0
++  note "wallpaper not present in this download; skipping (it ships separately - see README)"
++fi
++
+ if [ "$DO_WALL" = 1 ]; then
+   say "Copying wallpaper to $WALL_DIR"
+   place wallpaper "$HERE/wallpaper/stark-mint-wallpaper.png" "$WALL" "wallpaper/stark-mint-wallpaper.png"
+ fi

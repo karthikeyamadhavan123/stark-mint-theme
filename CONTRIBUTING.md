@@ -102,7 +102,7 @@ Cinnamon class names change between releases. Say which Cinnamon version you tes
 - Minimize, maximize and close controls.
 - Hover, active, focus and backdrop states.
 
-Section 9 of `DESIGN.md` records the current behaviour of the window controls and the direction the maintainer wants them to move in. The two do not currently match, and closing that gap is an open task.
+Section 9 of `DESIGN.md` records both the current behaviour of the window controls and the agreed target: close stays red at every state, while minimize and maximize get a red default and a gold hover. Close is already correct. Giving minimize and maximize that treatment is an open, well-scoped task and a good first contribution.
 
 If you change a window control, change it everywhere — CSD header bars, Metacity frames and the Xfwm assets, including both HiDPI variants. A control that behaves differently in a GTK application than in a legacy window is worse than one that is consistently plain.
 
@@ -264,7 +264,11 @@ Please:
 
 By submitting a contribution, you agree it may be distributed under the licence or licences that apply to the files you are modifying.
 
-Most of the theme is GPL-3.0, as a modified version of Everforest-GTK-Theme. A few components carry their own licences. `CREDITS.md` has the breakdown — including one open question about the licence for the project's original files, which the maintainer still needs to settle.
+The whole project is GPL-3.0. The theme files inherit it as a modified version of Everforest-GTK-Theme, and the project's own original files — the installer, the documentation, the previews and the wallpaper — are released under GPL-3.0 by choice.
+
+Two components keep their own licences: `gnome-shell.css` is LGPL 2.1, and the bundled fonts are under the SIL Open Font License 1.1. `CREDITS.md` has the full breakdown.
+
+By opening a pull request you are contributing your work under GPL-3.0.
 
 If you are unsure about the licensing of something, ask in an issue before you submit it.
 

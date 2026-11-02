@@ -238,15 +238,26 @@ Stark Mint ships Metacity/Muffin frames, Xfwm decorations with HiDPI variants, a
 
 ### Intended direction
 
-The maintainer's stated target is red as the default appearance for all three controls, with all three moving to gold on hover.
+The agreed target is:
 
-This is **not implemented yet**. Minimize and maximize are currently neutral in both CSD and Metacity, and close hovers to red rather than gold.
+| Control | Normal | Hover |
+|---|---|---|
+| Close | Stark Red | **Stark Red** — stays red |
+| Minimize | Stark Red | **Metallic Gold** |
+| Maximize | Stark Red | **Metallic Gold** |
 
-A contributor is welcome to implement the intended behaviour. If you do:
+Close keeps its red identity through every state. It is the one control where an accidental click costs the user work, so it should never share a hover colour with the two harmless controls next to it. Minimize and maximize move to gold, because gold is the theme's interaction colour and that is exactly what a hover is.
+
+**This is not implemented yet.** Minimize and maximize are currently neutral in both CSD and Metacity. Close already behaves correctly: it is red by default and deepens to Error Red or solid Stark Red on hover.
+
+So the open work is narrow — give minimize and maximize a red default and a gold hover. Leave close alone.
+
+A contributor is welcome to take it on. If you do:
 
 - Change CSD and Metacity together, plus the Xfwm PNG assets and both HiDPI variants. A control that behaves one way in a GTK application and another in a legacy window is worse than one that is consistently neutral.
-- Keep close visually distinguishable from minimize and maximize even when all three share a colour. Users rely on position and glyph, but a near-miss click on close is expensive.
-- Update this table in the same pull request.
+- Keep close visually distinct from the other two at every state. Position and glyph do most of that work, and the hover split reinforces it.
+- Check that a red default on three controls does not make the title bar louder than the window content. If it does, the red should be a restrained well rather than a solid fill.
+- Update the table above and the one before it in the same pull request.
 
 ### General rules for decorations
 
