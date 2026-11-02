@@ -372,6 +372,14 @@ Please read those notices before you redistribute this theme or any part of it.
 
 ---
 
+---
+##Some Proofs
+<img width="3019" height="1667" alt="work2" src="https://github.com/user-attachments/assets/29a082a6-b16d-427a-b5c2-5edf036d5248" />
+<img width="2677" height="1920" alt="work1" src="https://github.com/user-attachments/assets/11d072ac-fd0e-4d30-9ed6-a5ff35316612" />
+<img width="3019" height="1667" alt="work2" src="https://github.com/user-attachments/assets/353f2f23-6d79-4b88-abc1-e4b2e9757aec" />
+
+---
+
 ## Disclaimer
 
 Stark Mint is an independent, community-driven project inspired by the Iron Man visual aesthetic.
