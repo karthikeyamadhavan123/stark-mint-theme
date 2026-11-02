@@ -8,7 +8,7 @@ It is built on the `Everforest-Green-Dark` variant of [Everforest-GTK-Theme](htt
 
 The project targets Linux Mint Cinnamon first, with generic styling for other GTK desktops.
 
-**Current version:** 1.2.0
+**Current version:** 0.1.0
 
 ---
 
