@@ -25,7 +25,7 @@ set -euo pipefail
 umask 022
 
 NAME="Stark-Mint"
-VERSION="1.1.0"
+VERSION="1.2.0"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"

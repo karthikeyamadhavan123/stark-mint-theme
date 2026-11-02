@@ -51,19 +51,19 @@
        id="a"
        gradientTransform="matrix(1 1 -1 1 0.5 -0.5)">
       <stop
-         stop-color="#455A64"
+         stop-color="#444444"
          stop-opacity="0"
          offset="0.25"
          id="stop2"
          style="stop-color:#444444;stop-opacity:0" />
       <stop
-         stop-color="#455A64"
+         stop-color="#444444"
          stop-opacity="0.5"
          offset="0.75"
          id="stop4"
          style="stop-color:#444444;stop-opacity:0.50196081" />
       <stop
-         stop-color="#455A64"
+         stop-color="#444444"
          stop-opacity="1"
          offset="1"
          id="stop6"

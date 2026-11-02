@@ -24,7 +24,7 @@ gtk-color-scheme = "menu_color:#18191D"
 # Tooltips foreground/background
 gtk-color-scheme = "tooltip_fg_color:#EBE8E2\ntooltip_bg_color:#121317"
 # Links
-gtk-color-scheme = "link_color:#7CD6E3\nvisited_link_color:#A6E6EF"
+gtk-color-scheme = "link_color:#D6A84E\nvisited_link_color:#C4963F"
 
 # Set GTK settings
 gtk-auto-mnemonics              = 1

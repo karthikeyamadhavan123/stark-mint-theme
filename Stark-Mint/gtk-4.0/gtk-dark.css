@@ -157,7 +157,7 @@ row label.subtitle {
 }
 
 .success {
-  color: #7cd6e3;
+  color: #d6a84e;
 }
 
 .warning {
@@ -579,7 +579,7 @@ entry headerbar popover.background entry.success:focus-within,
 headerbar popover.background entry entry.success:focus-within,
 entry.success:focus-within {
   background-color: rgba(235, 232, 226, 0.08);
-  box-shadow: inset 0 0 0 2px #7cd6e3;
+  box-shadow: inset 0 0 0 2px #d6a84e;
   outline: none;
 }
 
@@ -609,8 +609,8 @@ entry.success:disabled {
 entry headerbar popover.background entry.success > text > selection,
 headerbar popover.background entry entry.success > text > selection,
 entry.success > text > selection {
-  background-color: rgba(124, 214, 227, 0.25);
-  color: #7cd6e3;
+  background-color: rgba(214, 168, 78, 0.25);
+  color: #d6a84e;
 }
 
 
@@ -624,7 +624,7 @@ entry.success > text > cursor-handle > contents {
 entry headerbar popover.background entry.success > image,
 headerbar popover.background entry entry.success > image,
 entry.success > image {
-  color: rgba(124, 214, 227, 0.75);
+  color: rgba(214, 168, 78, 0.75);
 }
 
 
@@ -634,14 +634,14 @@ entry headerbar popover.background entry.success > image:active,
 headerbar popover.background entry entry.success > image:active,
 entry.success > image:hover,
 entry.success > image:active {
-  color: #7cd6e3;
+  color: #d6a84e;
 }
 
 
 entry headerbar popover.background entry.success > image:disabled,
 headerbar popover.background entry entry.success > image:disabled,
 entry.success > image:disabled {
-  color: rgba(124, 214, 227, 0.35);
+  color: rgba(214, 168, 78, 0.35);
 }
 
 
@@ -1258,8 +1258,8 @@ button.osd:disabled {
 }
 
 button.suggested-action {
-  background-color: #7cd6e3;
-  color: #ebe8e2;
+  background-color: #d6a84e;
+  color: rgba(31, 33, 38, 0.87);
   box-shadow: none;
 }
 
@@ -1274,7 +1274,7 @@ button.suggested-action:hover {
 }
 
 button.suggested-action:checked {
-  background-color: #75b3d2;
+  background-color: #c4963f;
 }
 
 button.suggested-action:checked:hover {
@@ -1282,12 +1282,12 @@ button.suggested-action:checked:hover {
 }
 
 button.suggested-action:focus {
-  box-shadow: 0 0 0 2px rgba(124, 214, 227, 0.35);
+  box-shadow: 0 0 0 2px rgba(214, 168, 78, 0.35);
 }
 
 button.suggested-action.flat {
   background-color: transparent;
-  color: #7cd6e3;
+  color: #d6a84e;
 }
 
 button.suggested-action.flat:disabled {
@@ -1296,7 +1296,7 @@ button.suggested-action.flat:disabled {
 }
 
 button.suggested-action.flat:checked {
-  background-color: rgba(124, 214, 227, 0.3);
+  background-color: rgba(214, 168, 78, 0.3);
 }
 
 button.destructive-action {
@@ -1409,8 +1409,8 @@ menubutton.osd {
 }
 
 menubutton.suggested-action {
-  background-color: #7cd6e3;
-  color: #ebe8e2;
+  background-color: #d6a84e;
+  color: rgba(31, 33, 38, 0.87);
 }
 
 menubutton.destructive-action {
@@ -1537,8 +1537,8 @@ splitbutton.flat > menubutton > button {
 }
 
 splitbutton.suggested-action {
-  background-color: #7cd6e3;
-  color: #ebe8e2;
+  background-color: #d6a84e;
+  color: rgba(31, 33, 38, 0.87);
 }
 
 splitbutton.destructive-action {
@@ -1677,8 +1677,8 @@ list > row button.image-button:not(.flat):checked {
 
 
 list > row button.image-button:not(.flat).suggested-action {
-  background-color: #7cd6e3;
-  color: #ebe8e2;
+  background-color: #d6a84e;
+  color: rgba(31, 33, 38, 0.87);
 }
 
 
@@ -1691,19 +1691,19 @@ list > row button.image-button:not(.flat).destructive-action {
  * Links *
  *********/
 link {
-  color: #7cd6e3;
+  color: #d6a84e;
 }
 
 link:visited {
-  color: #a6e6ef;
+  color: #c4963f;
 }
 
 button.link:link, button.link:link:focus, button.link:link:hover, button.link:link:active {
-  color: #7cd6e3;
+  color: #d6a84e;
 }
 
 button.link:visited, button.link:visited:focus, button.link:visited:hover, button.link:visited:active {
-  color: #a6e6ef;
+  color: #c4963f;
 }
 
 button.link > label {
@@ -3865,7 +3865,7 @@ levelbar block.high, levelbar block:not(.empty) {
 }
 
 levelbar block.full {
-  background-color: #7cd6e3;
+  background-color: #d6a84e;
 }
 
 levelbar block.empty {
@@ -4443,7 +4443,7 @@ row.spin.warning .suggested-action {
 
 row.entry.success text > selection:focus-within,
 row.spin.success text > selection:focus-within {
-  background-color: alpha(#7cd6e3, 0.2);
+  background-color: alpha(#d6a84e, 0.2);
 }
 
 row.entry.success text > cursor-handle > contents,
@@ -4463,8 +4463,8 @@ row.spin.success .subtitle {
 
 row.entry.success .suggested-action,
 row.spin.success .suggested-action {
-  background-color: #7cd6e3;
-  color: #ebe8e2;
+  background-color: #d6a84e;
+  color: rgba(31, 33, 38, 0.87);
 }
 
 row.combo image.dropdown-arrow:disabled {
@@ -4807,8 +4807,8 @@ window.dialog.message .dialog-action-area > button:not(:last-child):hover {
 }
 
 window.dialog.message .dialog-action-area > button.suggested-action:not(:disabled) {
-  background-color: #317ca5;
-  color: #ebe8e2;
+  background-color: #d6a84e;
+  color: rgba(31, 33, 38, 0.87);
 }
 
 window.dialog.message .dialog-action-area > button.destructive-action:not(:disabled) {
@@ -4842,8 +4842,8 @@ window.messagedialog .response-area {
 }
 
 window.messagedialog .response-area button.suggested {
-  background-color: #317ca5;
-  color: #ebe8e2;
+  background-color: #d6a84e;
+  color: rgba(31, 33, 38, 0.87);
   /* color: $primary; */
 }
 
@@ -6463,17 +6463,17 @@ flowboxchild.card:not(.category-tile) {
 }
 
 .category-tile.card.category-create {
-  background: linear-gradient(180deg, #ce8cd7 0%, #2861c6 100%);
+  background: linear-gradient(180deg, #b3272d 0%, #8e1f24 100%);
   color: white;
 }
 
 .category-tile.card.category-create:hover {
-  background: linear-gradient(180deg, shade(#ce8cd7, 1.07) 0%, shade(#2861c6, 1.1) 100%);
+  background: linear-gradient(180deg, shade(#b3272d, 1.07) 0%, shade(#8e1f24, 1.1) 100%);
   color: white;
 }
 
 .category-tile.card.category-create:active {
-  background: linear-gradient(180deg, shade(#ce8cd7, 0.95) 0%, shade(#2861c6, 0.95) 100%);
+  background: linear-gradient(180deg, shade(#b3272d, 0.95) 0%, shade(#8e1f24, 0.95) 100%);
   color: white;
 }
 
@@ -6493,33 +6493,33 @@ flowboxchild.card:not(.category-tile) {
 }
 
 .category-tile.card.category-learn {
-  background: linear-gradient(180deg, #3bc2d5 30%, #2ab0c3 100%);
-  color: white;
+  background: linear-gradient(180deg, #e5ba63 30%, #d6a84e 100%);
+  color: rgba(31, 33, 38, 0.87);
 }
 
 .category-tile.card.category-learn:hover {
-  background: linear-gradient(180deg, shade(#3bc2d5, 1.06) 30%, shade(#2ab0c3, 1.06) 100%);
-  color: white;
+  background: linear-gradient(180deg, shade(#e5ba63, 1.06) 30%, shade(#d6a84e, 1.06) 100%);
+  color: rgba(31, 33, 38, 0.87);
 }
 
 .category-tile.card.category-learn:active {
-  background: linear-gradient(180deg, shade(#3bc2d5, 0.95) 30%, shade(#2ab0c3, 0.95) 100%);
-  color: white;
+  background: linear-gradient(180deg, shade(#e5ba63, 0.95) 30%, shade(#d6a84e, 0.95) 100%);
+  color: rgba(31, 33, 38, 0.87);
 }
 
 .category-tile.card.category-play {
-  background: linear-gradient(75deg, #f9e2a7 0%, #eb5ec3 50%, #6d53e0 100%);
-  color: #393484;
+  background: linear-gradient(75deg, #d6a84e 0%, #c4963f 100%);
+  color: rgba(31, 33, 38, 0.87);
 }
 
 .category-tile.card.category-play:hover {
-  background: linear-gradient(75deg, shade(#f9e2a7, 1.07) 0%, shade(#eb5ec3, 1.07) 50%, shade(#6d53e0, 1.07) 100%);
-  color: #393484;
+  background: linear-gradient(75deg, shade(#d6a84e, 1.07) 0%, shade(#c4963f, 1.07) 100%);
+  color: rgba(31, 33, 38, 0.87);
 }
 
 .category-tile.card.category-play:active {
-  background: linear-gradient(75deg, shade(#f9e2a7, 0.97) 0%, shade(#eb5ec3, 0.95) 50%, shade(#6d53e0, 1.07) 100%);
-  color: #393484;
+  background: linear-gradient(75deg, shade(#d6a84e, 0.97) 0%, shade(#c4963f, 0.95) 100%);
+  color: rgba(31, 33, 38, 0.87);
 }
 
 .category-tile.card.category-socialize {
@@ -6538,7 +6538,7 @@ flowboxchild.card:not(.category-tile) {
 .category-tile.card.category-work {
   padding: 1px;
   /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
-  color: #1c71d8;
+  color: #8e1f24;
   background-color: #fdf8d7;
   background-image: linear-gradient(rgba(235, 232, 226, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 232, 226, 0.12) 1px, transparent 1px);
   background-size: 10px 10px, 10px 10px;
@@ -6547,13 +6547,13 @@ flowboxchild.card:not(.category-tile) {
 }
 
 .category-tile.card.category-work:hover {
-  color: #1c71d8;
+  color: #8e1f24;
   background-color: #fefcef;
   background-image: linear-gradient(rgba(235, 232, 226, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 232, 226, 0.12) 1px, transparent 1px);
 }
 
 .category-tile.card.category-work:active {
-  color: #1c71d8;
+  color: #8e1f24;
   background-color: #fcf4bf;
   background-image: linear-gradient(rgba(235, 232, 226, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 232, 226, 0.12) 1px, transparent 1px);
   background-size: 10px 10px, 10px 10px;
@@ -6744,8 +6744,8 @@ star-image > image.non-starred:hover {
 }
 
 .upgrade-banner-background {
-  background: linear-gradient(to bottom, #7cd6e3, #7cd6e3);
-  color: white;
+  background: linear-gradient(to bottom, #d6a84e, #d6a84e);
+  color: rgba(31, 33, 38, 0.87);
 }
 
 .upgrade-buttons #button_upgrades_install,
@@ -6879,13 +6879,13 @@ app-context-bar > box > button.flat {
 }
 
 .context-tile-lozenge.green, .context-tile-lozenge.details-rating-0 {
-  color: #4a5501;
-  background-color: rgba(124, 214, 227, 0.15);
+  color: #d6a84e;
+  background-color: rgba(214, 168, 78, 0.15);
 }
 
 .context-tile-lozenge.blue, .context-tile-lozenge.details-rating-5 {
-  color: #7cd6e3;
-  background-color: rgba(124, 214, 227, 0.15);
+  color: #a5a9b2;
+  background-color: rgba(165, 169, 178, 0.15);
 }
 
 .context-tile-lozenge.yellow, .context-tile-lozenge.details-rating-12 {
@@ -6980,7 +6980,7 @@ row.app > box.header > image {
 }
 
 row.app label.warning {
-  color: #c93037;
+  color: #e5ba63;
 }
 
 @keyframes pre-delay {
@@ -7012,7 +7012,7 @@ window > contents > leaflet > box > stack.background {
 @define-color weather_temp_chart_fill_color rgba(229, 186, 99, 0.5);
 @define-color weather_temp_chart_stroke_color #ac7b00;
 @define-color weather_thermometer_warm_color #e5ba63;
-@define-color weather_thermometer_cold_color #7cd6e3;
+@define-color weather_thermometer_cold_color #a5a9b2;
 #places-label {
   font-weight: bold;
 }
@@ -7082,7 +7082,7 @@ WeatherThermometer > label.high {
 
 WeatherThermometer > label.low {
   font-weight: bold;
-  color: #7cd6e3;
+  color: #a5a9b2;
 }
 
 .forecast-button {
@@ -7114,7 +7114,7 @@ scrolledwindow.inline undershoot.top {
 }
 
 .search-view {
-  background-color: #78d5e2;
+  background-color: #d6a84e;
   color: rgba(31, 33, 38, 0.87);
 }
 
@@ -7228,8 +7228,8 @@ image.circular {
 }
 
 .night .clock-time {
-  color: #78d5e2;
-  background-color: alpha(#7cd6e3, 0.25);
+  color: #a5a9b2;
+  background-color: alpha(#a5a9b2, 0.25);
 }
 
 .naut .clock-time,
@@ -7595,18 +7595,18 @@ avatar {
 }
 
 avatar.color1 {
-  background-image: linear-gradient(#83b6ec, #337fdc);
-  color: #cfe1f5;
+  background-image: linear-gradient(#a5a9b2, #343842);
+  color: #ebe8e2;
 }
 
 avatar.color2 {
-  background-image: linear-gradient(#7ad9f1, #0f9ac8);
-  color: #caeaf2;
+  background-image: linear-gradient(#ebe8e2, #a5a9b2);
+  color: #26282e;
 }
 
 avatar.color3 {
-  background-image: linear-gradient(#8de6b1, #2bb7cc);
-  color: #cef8d8;
+  background-image: linear-gradient(#343842, #18191d);
+  color: #a5a9b2;
 }
 
 avatar.color4 {
@@ -7645,8 +7645,8 @@ avatar.color10 {
 }
 
 avatar.color11 {
-  background-image: linear-gradient(#9e91e8, #7a59ca);
-  color: #d5d2f5;
+  background-image: linear-gradient(#e05a60, #8e1f24);
+  color: #ebe8e2;
 }
 
 avatar.color12 {
@@ -8365,7 +8365,7 @@ themeswitcher checkbutton.dark {
 /* these are pretty self explicative */
 @define-color warning_color #e5ba63;
 @define-color error_color #c93037;
-@define-color success_color #7cd6e3;
+@define-color success_color #d6a84e;
 /* these colors are exported for the window manager and shouldn't be used in applications,
 read if you used those and something break with a version upgrade you're on your own... */
 @define-color wm_focused_title #ebe8e2;
@@ -8448,8 +8448,8 @@ read if you used those and something break with a version upgrade you're on your
 @define-color green_1 #8ff0a4;
 @define-color green_2 #57e389;
 @define-color green_3 #33d17a;
-@define-color green_4 #3bc2d5;
-@define-color green_5 #29acbf;
+@define-color green_4 #2ec27e;
+@define-color green_5 #26a269;
 @define-color yellow_1 #f9f06b;
 @define-color yellow_2 #f8e45c;
 @define-color yellow_3 #f6d32d;
@@ -8494,9 +8494,9 @@ read if you used those and something break with a version upgrade you're on your
 @define-color destructive_bg_color #c93037;
 @define-color destructive_fg_color #ebe8e2;
 @define-color destructive_color #c93037;
-@define-color success_bg_color #7cd6e3;
-@define-color success_fg_color #ebe8e2;
-@define-color success_color #7cd6e3;
+@define-color success_bg_color #d6a84e;
+@define-color success_fg_color rgba(31, 33, 38, 0.87);
+@define-color success_color #d6a84e;
 @define-color warning_bg_color #e5ba63;
 @define-color warning_fg_color rgba(31, 33, 38, 0.87);
 @define-color warning_color #e5ba63;
@@ -8528,7 +8528,7 @@ read if you used those and something break with a version upgrade you're on your
  * Appended after the recoloured base theme so these rules win.
  * Tokens: forge #0E0F11 | graphite #18191D | surface #1F2126
  *         charcoal #26282E | border #343842 | silver #A5A9B2
- *         bone #EBE8E2 | gold #D6A84E | red #B3272D | arc #7CD6E3
+ *         bone #EBE8E2 | gold #D6A84E | red #B3272D
  * ===================================================================== */
 
 /* ---- Header bars: brushed-metal gradient + hairline ---- */
@@ -8721,11 +8721,11 @@ tooltip {
   color: #EBE8E2;
 }
 
-/* ---- Links = arc pulse ---- */
+/* ---- Links = gold ---- */
 link,
 *:link,
 button.link {
-  color: #7CD6E3;
+  color: #D6A84E;
 }
 
 /* ---- Terminal-ish monospace widgets ---- */

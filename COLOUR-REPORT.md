@@ -1,114 +1,129 @@
 # Stark Mint 1.2.0 — Colour Report
 
-**Result: cyan is gone from the theme.** No file that styles anything (CSS, GTK 2 rc, window-frame
-XML, SVG and PNG assets, metadata) declares `#7CD6E3`, any other cyan or teal, or a blue accent.
-The only cyan left in the package is inside two images that are records, not styling (see
-"What is left, and why").
+**Result:** no theme file (CSS, GTK 2 rc, window-frame XML, SVG, theme PNG, `index.theme`,
+`install.sh`) contains cyan, teal or a blue accent. Blue values remain **only** in named colour
+lists that no theme rule uses (section 4). The design mock-up image still shows cyan on purpose.
 
-Final accent families: **Metallic Gold `#D6A84E`** and **Stark Red `#B3272D`**. Neutrals:
-Forge `#0E0F11`, Graphite `#18191D`, Charcoal, Silver, Bone `#EBE8E2`.
+> This report replaces an earlier version that described changes before they were made. Every
+> number below comes from the final 1.2.0 files.
 
-## 1. What was searched
+Accents: **Metallic Gold `#D6A84E`** (plus `#E5BA63` light, `#C4963F` deep) and **Stark Red
+`#B3272D`** (plus the theme's existing `#C93037`, `#E05A60`, `#8E1F24`). Neutrals: forge `#0E0F11`,
+graphite `#18191D`, surface `#1F2126`, charcoal `#26282E`, border `#343842`, silver `#A5A9B2`,
+bone `#EBE8E2`.
 
-| Kind | Files | Method |
+## 1. How it was checked
+
+| Check | Covers | Method |
 |---|---|---|
-| Text | Every non-binary file: GTK 2/3/4 CSS and rc, Cinnamon and GNOME Shell CSS, Metacity XML, Xfwm `themerc`, Plank theme, `index.theme`, `install.sh`, README/CREDITS/CHANGELOG | Exact search for every retired value, plus a hue scan of **every** `#hex` and `rgb()/rgba()` colour |
-| SVG | All 107 SVGs | Same as text, plus XML parse check |
-| PNG | All theme PNGs, thumbnails, wallpaper, previews | Pixel scan for cyan/teal, blue and green hues |
+| Exact search | every file except `.git` | 25 retired values (list in section 2) |
+| Hue scan | every text file: CSS, rc, XML, SVG, `themerc`, `dock.theme`, `index.theme`, `install.sh`, docs | every `#hex` and `rgb()/rgba()` value classed by hue: cyan/teal 160–205°, blue 205–260°, violet 260–300°, green 75–160° |
+| Pixel scan | every PNG | count of visible pixels in the same hue bands |
+| Wallpaper | `stark-mint-wallpaper.png` | every pixel, including very faint tints |
 
-Retired values searched for: `#7CD6E3`, `rgba(124, 214, 227, …)`, `#A6E6EF`, `#5CBCCB`, `#75B3D2`,
-`#78D5E2`, `#3BC2D5`, `#2AB0C3`, `#29ACBF`, `#317CA5`, `#7AD9F1`, `#0F9AC8`, `#2BB7CC`, `#83B6EC`,
-`#9E91E8`, `#1A73E8`, `#4CAF50`, `#455A64`, `#1A1B26`, `#56635F`.
+"Chroma" below means how strong a colour is (0 = pure grey, 255 = fully saturated).
 
-## 2. Results
+## 2. Exact search — retired values
 
-**Exact search:** 0 hits in any theme file. The only mentions are in `CHANGELOG.md` (history, and
-this release's list of what was removed) and this report.
+Searched: `#7CD6E3`, `rgba(124, 214, 227, …)`, `#A6E6EF`, `#5CBCCB`, `#75B3D2`, `#78D5E2`,
+`#3BC2D5`, `#2AB0C3`, `#29ACBF`, `#317CA5`, `#7AD9F1`, `#0F9AC8`, `#2BB7CC`, `#83B6EC`, `#337FDC`,
+`#9E91E8`, `#1A73E8`, `#2861C6`, `#6D53E0`, `#393484`, `#1C71D8`, `#4CAF50`, `#455A64`, `#1A1B26`,
+`#56635F`, `rgba(72, 85, 94, …)`, `rgba(83, 98, 109, …)`.
 
-**Hue scan of every colour value** (cyan/teal = hue 160–205° with visible colour; blue = 205–260°;
-green = 75–160°):
+| Result | Where |
+|---|---|
+| **0 hits** for every value in any theme file | — |
+| `#1C71D8`: 1 hit per file | `gtk-4.0/gtk.css` and `gtk-dark.css` line 8446, `@define-color blue_4` (named colour list, section 4) |
+| Mentions in `CHANGELOG.md` and this report | history / this list |
 
-| Found | Where | Verdict |
+Words "cyan", "teal", "turquoise", "arc pulse" in theme files: only the GNOME Settings
+accent-picker selectors `accent-button.teal` and `var(--accent-teal)` (GTK 4 lines 7932, 7942–7943).
+
+## 3. Hue scan — every colour value in theme files
+
+| Found | Count | Verdict |
 |---|---|---|
-| Cyan / teal | none | ✅ |
-| Blue: `#94A6FF`…`#031579` (`BLUEBERRY_*`), `#99C1F1`…`#1A5FB4` (`blue_1`–`5`) | GTK 3 / GTK 4 `@define-color` lines only | Named colours for apps. **No rule in the theme uses them** (checked: 0 references). Kept on purpose. |
-| Green: `LIME_*`, `green_1`–`5` | same | same as above |
-| Cool dark greys, e.g. `#1F2126`, `#343842`, `#2A2D34` | everywhere | The existing graphite neutral family (very low colour). Not accents. |
+| Cyan / teal, chroma ≥ 10 | **0** | ✅ |
+| Blue, chroma ≥ 20 | GTK 3: 5 (`BLUEBERRY_*`). GTK 4: 10 (`BLUEBERRY_*`, `blue_1`–`5`) | named colour lists only |
+| Blue-tinted greys, chroma 10–14 | many | the existing graphite family: `#343842`, `#2A2D34`, `#A5A9B2`, `#6B7079`, `#8A8E96`, plus the three new graphite values below |
+| Violet | GTK 3: 5 (`GRAPE_*`). GTK 4: 10 (`GRAPE_*`, `purple_*`) + 3 (avatar 10) | named lists; avatar 10 is purple, not blue — unchanged |
+| Green | GTK 3: 5, GTK 4: 10 (`LIME_*`, `green_*`) | named lists |
 
-**PNG pixel scan:**
+New neutral values introduced, all in the graphite family (chroma 10–11, below border `#343842` at 14):
+`#5d6168` (GTK 3 line 6548), `rgba(80, 83, 90, 0.75)` and `rgba(93, 97, 104, 0.75)` (Cinnamon 2510–2517).
+
+## 4. Pixel scan — PNG files
 
 | File | Before | After |
 |---|---|---|
-| GTK 3 `selectionmode-checkbox-checked(@2).png` | solid cyan | gold |
-| GTK 3 `scale-*-marks-*.png` (32 files) | cyan + green-grey leftovers | gold / warm grey; only the theme's cool dark greys remain |
-| GTK 2 `*-active.png` (4 files) | 1–6 olive edge pixels | gold hue |
-| 4 × `thumbnail.png` | cyan dot | gold dot |
-| `wallpaper/stark-mint-wallpaper.png` | cyan triangle, cyan glow, blue font fringes | **0 cyan pixels, 0 blue pixels** |
-| `preview/gtk3-widgets.png` | 345 cyan pixels (link) | **0 cyan pixels**. The remaining blue pill is the colour-picker button showing its value (content set by the test app, not the theme). |
-| `preview/design-reference.png` | cyan | unchanged — see below |
+| GTK 3 `scale-*-marks-*-slider(@2).png` (8 non-dark files) | 98 / 446 cyan px each | **0** |
+| GTK 3 `selectionmode-checkbox-checked(@2).png` | 1153 / 4620 cyan px | **0** (now identical to the `-dark` files) |
+| `thumbnail.png` × 4 | 6–32 cyan px | **0** |
+| `wallpaper/stark-mint-wallpaper.png` | 7402 cool px with chroma ≥ 12, strongest 70 | **0**; strongest cool pixel now chroma 5 (graphite level) |
+| `preview/gtk3-widgets.png` (re-taken) | 324 cyan px | **0** cyan. 2940 blue px = the colour-picker button showing its blue sample value, set by the test app |
+| `preview/design-reference.png` | 4754 cyan, 1764 blue | unchanged (section 6) |
+| all GTK 2, Xfwm, other PNGs | 0 | 0 |
 
-## 3. States checked
+## 5. States
 
 | State | GTK 3 | GTK 4 | Cinnamon | GNOME Shell |
 |---|---|---|---|---|
-| Primary action | gold, forge text | gold, forge text (incl. dialogs, previously blue) | gold | gold |
+| Primary action | gold, dark text | gold, dark text (incl. dialogs, were blue) | gold | gold |
+| Pressed primary | `#C4963F` | `#C4963F` | — | — |
 | Focus ring | gold | gold | gold | gold |
 | Selection | gold (unchanged) | gold (unchanged) | gold (unchanged) | gold (unchanged) |
-| Active / pressed | gold `#C4963F` | gold `#C4963F` | gold | gold |
-| Links | gold, visited `#C4963F` | gold, visited `#C4963F` | gold, hover `#E5BA63` | gold |
-| Success | gold (`success_color`, levelbar full) | gold (`.success`, `entry.success`, `success_*_color`) | — | — |
-| Warning | gold light (unchanged) | gold light; Software warning label fixed from red | gold light (unchanged) | gold light (unchanged) |
-| Error | red (unchanged) | red (unchanged) | red (unchanged) | red; two error labels fixed from gold |
-| Information | **bone on graphite** (was gold text) | bone on graphite (unchanged) | neutral (unchanged) | neutral (unchanged) |
+| Links | gold, visited `#C4963F` | gold, visited `#C4963F` | gold, hover `#E5BA63` | gold, hover `#E5BA63`, pressed `#C4963F` |
+| Success | gold | gold | — | — |
+| Warning | light gold (unchanged) | light gold; Software warning label was red | light gold (unchanged) | light gold (unchanged) |
+| Error | red (unchanged) | red (unchanged) | red (unchanged) | red; dialog error label was gold |
+| Information | bone text (was gold) | unchanged | neutral | neutral |
 | Destructive | red (unchanged) | red (unchanged) | red (unchanged) | red (unchanged) |
 
-## 4. Real-parser and file checks
+## 6. Syntax and file checks (run on the final files)
 
 | Check | Result |
 |---|---|
-| GTK 3.24 parser (`gtk3-widget-factory`, virtual display) | 1 error, same as before 1.2.0 (`border-spacing`, line 1048, upstream) |
-| GTK 4 parser (`gtk4-widget-factory`, virtual display) | 12 errors, identical to before 1.2.0 (upstream accent-picker lines 7918–7971) |
-| GTK 3 screenshot vs 1.1.0 | Only the link button changed (cyan → gold), plus 9 edge pixels on the marked-slider knob (green-grey → warm grey) |
-| GTK 4 screenshot | Renders correctly; link gold |
-| All SVG and XML files | 110 files parse as valid XML |
-| Cinnamon / GNOME Shell CSS | Braces balanced; line counts unchanged (3148 / 6194) |
-| Files added / removed | 1 added (this report); 0 removed |
+| GTK 3.24 parser (`gtk3-widget-factory`, virtual display) | 1 error, same as 1.1.0: `gtk.css:1048:16 'border-spacing'` (upstream) |
+| GTK 4.14 parser (`gtk4-widget-factory`, virtual display) | 12 errors, line-for-line identical to 1.1.0 (upstream accent picker, lines 7918–7971) |
+| All SVG and XML files (`xmllint`) | 110 files, 0 failures |
+| CSS braces | balanced in `cinnamon.css` (517), `gnome-shell.css` (1116), `pad-osd.css`, GTK 3 (1602), GTK 4 (1509) |
+| `gtkrc` | line 27 well-formed, quotes balanced |
+| `install.sh` | `bash -n` OK, ShellCheck clean |
+| Line counts | unchanged in every CSS, rc and XML file (only values on existing lines changed) |
+| `gtk.css` vs `gtk-dark.css` | still identical (GTK 3 and GTK 4) |
+| Screenshots | GTK 3 and GTK 4 widget factories render; link button and primary buttons gold |
 
-## 5. Contrast (WCAG ratio, 4.5:1 = normal-text minimum)
+Cinnamon and GNOME Shell CSS could only be checked for syntax, not on a running desktop.
+
+## 7. Contrast (WCAG ratio; 4.5 is the normal-text minimum)
 
 | Pair | Ratio |
 |---|---|
-| Gold link on graphite `#18191D` | 8.00 |
-| Visited link `#C4963F` on graphite | 6.51 |
-| Forge text on gold primary button | 8.74 (was bone on cyan: **1.36**) |
-| Forge text on pressed gold `#C4963F` | 7.11 |
-| Info text bone on graphite | 14.36 |
-| Silver `#C3C5C9` on graphite | 10.16 |
-| Shell error label `#E05A60` on `#1F2126` | 4.45 (same red the theme already uses for red text) |
-| Software tiles: forge on gold / white on Stark red / dark red on cream | 7.11 / 5.30–8.85 / 8.26 |
-| Avatars 1–3, 11 | 5.34 – 7.98 |
+| Gold link on graphite | 8.00 |
+| `#C4963F` visited link on graphite | 6.51 |
+| Dark text on gold button (was bone on cyan: 1.36) | 5.73 |
+| Dark text on pressed `#C4963F` | 4.86 |
+| Dark text on light gold `#E5BA63` (Software tiles, banner) | 6.70 |
+| Info-bar bone on graphite | 14.36 |
+| Silver `#A5A9B2` on graphite | 7.46 |
+| Shell error `#E05A60` on `#1F2126` | 4.45 (the theme's existing red-text colour) |
+| White on `#B3272D` / `#8E1F24` (Software "create" tile) | 6.47 / 8.85 |
+| `#8E1F24` on cream (Software "work" tile) | 8.26 |
 
-## 6. What is left, and why
+## 8. What is left, and why
 
-1. **`preview/design-reference.png`**, the original design mock-up, still shows an "Arc Cyan
-   #7CD6E3" swatch and "Arc Pulse" labels. It is kept unchanged because editing labels inside a
-   design image would turn it into a misleading record. README marks it as historical; the colour
-   table in README is the current spec. It can be deleted or redrawn if you prefer.
-2. **Named colour lists** (GTK 3 `BLUEBERRY_*`, `LIME_*`, etc.; GTK 4 `blue_*`, `green_*`): these
-   are for apps that ask for a colour by name, and the theme never uses them.
-3. **GNOME Settings accent picker** (`accent-button.blue`, `.teal`, …): the swatches show the colour
-   being picked. GTK skips these lines anyway.
-
-## 7. Neutral values — note
-
-Your spec lists Charcoal `#26282D` and Silver `#C3C5C9`. The theme had `#26282E` (45 uses) and
-`#A5A9B2` (32 uses). To avoid a redesign, these were **not** swapped:
-`#26282E` is visually identical to `#26282D`, and `#A5A9B2` is kept as "muted silver" for secondary
-text, scrollbars and switch knobs. `#C3C5C9` is used for the new informational states. A global
-swap is a one-line change if you want it.
-
-## 8. Not tested
-
-Like 1.1.0, nothing here was tested on a running Cinnamon or GNOME desktop. GTK 3 and GTK 4 were
-checked with the real GTK parsers and screenshots under a virtual display. Cinnamon and GNOME Shell
-changes are colour-value swaps inside existing rules, checked by syntax only.
+1. **`preview/design-reference.png`** — the original design mock-up, with an "Arc Cyan #7CD6E3"
+   swatch. Kept as a record of the original design; README marks it as historical. It is not
+   installed. It can be deleted if you prefer.
+2. **Named colour lists** — GTK 3 `BLUEBERRY_*` (8555–8559), GTK 4 `BLUEBERRY_*` (8413–8417) and
+   `blue_1`–`5` (8443–8447), plus the green and purple lists. No theme rule uses them (0 references).
+   They exist so an app that asks for "blue" by name gets blue.
+3. **GNOME Settings accent picker** (GTK 4 7932–7971) — selectors named `.teal`, `.blue` that point
+   to the colour the user is choosing. They declare no colour, and GTK skips them (they are the
+   12 known parser errors).
+4. **Non-cyan Everforest leftovers**, outside this task's scope (not cyan, teal or blue):
+   - sage grey `#9da9a0` knob in the GTK 3 `*-disabled*` slider-mark PNGs;
+   - 2–27 yellow-green edge pixels around the gold knob in the GTK 3 `-dark` slider-mark PNGs;
+   - a few olive edge pixels in GTK 2 `checkbox/radio-*-active.png`;
+   - the `-dark` selection checkbox tick is a near-black with a faint green tint (24, 27, 19).
+   These can be neutralised in a follow-up if wanted.

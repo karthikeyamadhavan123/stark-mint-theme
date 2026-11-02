@@ -376,12 +376,12 @@ StScrollBar StButton#hhandle:active {
 }
 
 .cinnamon-link {
-    color: #7cd6e3;
+    color: #d6a84e;
     text-decoration: underline;
 }
 
 .cinnamon-link:hover {
-    color: #a6e6ef;
+    color: #e5ba63;
 }
 
 #Tooltip {
@@ -594,8 +594,8 @@ StScrollBar StButton#hhandle:active {
 
 #panelRight:dnd {
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(124, 214, 227, 0.35);
-    background-gradient-end: rgba(124, 214, 227, 0.35);
+    background-gradient-start: rgba(214, 168, 78, 0.35);
+    background-gradient-end: rgba(214, 168, 78, 0.35);
 }
 
 #panelRight:ltr {
@@ -626,8 +626,8 @@ StScrollBar StButton#hhandle:active {
 
 #panelCenter:dnd {
     background-gradient-direction: vertical;
-    background-gradient-start: rgba(124, 214, 227, 0.35);
-    background-gradient-end: rgba(124, 214, 227, 0.35);
+    background-gradient-start: rgba(214, 168, 78, 0.35);
+    background-gradient-end: rgba(214, 168, 78, 0.35);
 }
 
 .panel-top,
@@ -1130,7 +1130,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .calendar-event-time-present:all-day {
-    color: rgba(124, 214, 227, 0.6);
+    color: rgba(214, 168, 78, 0.6);
 }
 
 .calendar-event-time-future {
@@ -1154,7 +1154,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .calendar-event-countdown:current {
-    color: rgba(124, 214, 227, 0.6);
+    color: rgba(214, 168, 78, 0.6);
 }
 
 .calendar-event-summary {
@@ -2134,8 +2134,8 @@ StScrollBar StButton#hhandle:active {
 
 .window-list-item-box .progress {
     background-gradient-direction: vertical;
-    background-gradient-start: #7cd6e3;
-    background-gradient-end: #7cd6e3;
+    background-gradient-start: #d6a84e;
+    background-gradient-end: #d6a84e;
     border-radius: 4px;
     box-shadow: none;
 }
@@ -2260,8 +2260,8 @@ StScrollBar StButton#hhandle:active {
 
 .grouped-window-list-item-box .progress {
     background-gradient-direction: vertical;
-    background-gradient-start: #7cd6e3;
-    background-gradient-end: #7cd6e3;
+    background-gradient-start: #d6a84e;
+    background-gradient-end: #d6a84e;
     border-radius: 4px;
     box-shadow: none;
 }
@@ -2507,14 +2507,14 @@ StScrollBar StButton#hhandle:active {
 }
 
 .workspace-graph .workspace .windows {
-    -active-window-background: rgba(72, 85, 94, 0.75);
+    -active-window-background: rgba(80, 83, 90, 0.75);
     -active-window-border: rgba(0, 0, 0, 0.8);
-    -inactive-window-background: rgba(72, 85, 94, 0.75);
+    -inactive-window-background: rgba(80, 83, 90, 0.75);
     -inactive-window-border: rgba(0, 0, 0, 0.8);
 }
 
 .workspace-graph .workspace:active .windows {
-    -active-window-background: rgba(83, 98, 109, 0.75);
+    -active-window-background: rgba(93, 97, 104, 0.75);
     -active-window-border: rgba(0, 0, 0, 0.8);
     -inactive-window-background: rgba(42, 45, 52, 0.75);
     -inactive-window-border: rgba(0, 0, 0, 0.8);
@@ -3039,11 +3039,11 @@ stage {
 
 /* ---- Links ---- */
 .cinnamon-link {
-  color: #7CD6E3;
+  color: #D6A84E;
 }
 
 .cinnamon-link:hover {
-  color: #A6E6EF;
+  color: #E5BA63;
 }
 
 /* ---- Application menu, Cinnamon 6.6+ ----

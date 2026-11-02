@@ -92,17 +92,17 @@
 
 .shell-link {
   border-radius: 4px;
-  color: #7cd6e3;
+  color: #d6a84e;
 }
 
 .shell-link:hover {
-  color: #7cd6e3;
-  background-color: rgba(124, 214, 227, 0.15);
+  color: #d6a84e;
+  background-color: rgba(214, 168, 78, 0.15);
 }
 
 .shell-link:active {
-  color: #7cd6e3;
-  background-color: rgba(124, 214, 227, 0.25);
+  color: #d6a84e;
+  background-color: rgba(214, 168, 78, 0.25);
 }
 
 .lowres-icon {
@@ -1206,15 +1206,15 @@ StEntry StLabel.hint-text,
 }
 
 .lg-dialog .shell-link {
-  color: #7cd6e3;
+  color: #d6a84e;
 }
 
 .lg-dialog .shell-link:hover {
-  color: #a6e6ef;
+  color: #e5ba63;
 }
 
 .lg-dialog .shell-link:active {
-  color: #5cbccb;
+  color: #c4963f;
 }
 
 .lg-dialog .actor-link {
@@ -3152,7 +3152,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .prompt-dialog .prompt-dialog-error-label {
-  color: #e5ba63;
+  color: #e05a60;
 }
 
 .polkit-dialog-user-layout {
@@ -3391,7 +3391,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .prompt-dialog .prompt-dialog-error-label {
-  color: #e5ba63;
+  color: #e05a60;
 }
 
 .polkit-dialog-user-layout {
@@ -3669,7 +3669,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .url-highlighter {
-  link-color: #7cd6e3;
+  link-color: #d6a84e;
 }
 
 .message-media-control {
@@ -3975,7 +3975,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .url-highlighter {
-  link-color: #7cd6e3;
+  link-color: #d6a84e;
 }
 
 .message-media-control {
@@ -4281,7 +4281,7 @@ StWidget.focused .app-grid-running-dot {
 }
 
 .url-highlighter {
-  link-color: #7cd6e3;
+  link-color: #d6a84e;
 }
 
 .message-media-control {

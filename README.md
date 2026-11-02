@@ -1,11 +1,22 @@
-# Stark-Mint 1.1.0
+# Stark-Mint 1.2.0
 
 A dark industrial theme for Linux Mint (Cinnamon) and GNOME. It's a modified
 version of **Everforest-GTK-Theme (Everforest-Green-Dark)**, recoloured to the
 Stark Mint design. See `CREDITS.md` for sources and licences.
 
-Colour roles: **gold** for main actions and selection, **red** for close and
-danger, **cyan** for links and success.
+## Colours
+
+Two accent colours plus neutrals. There is no cyan, teal or blue accent.
+
+| Colour | Value | Used for |
+|---|---|---|
+| Metallic Gold | `#D6A84E` | focus, selection, primary buttons, links, progress, success, checkboxes |
+| Gold variants | `#E5BA63` light, `#C4963F` deep | warnings and hover (light); pressed buttons and visited links (deep) |
+| Stark Red | `#B3272D` (theme also uses `#C93037`, `#E05A60`, `#8E1F24`) | errors, close, destructive actions |
+| Neutrals | forge `#0E0F11`, graphite `#18191D`, surface `#1F2126`, charcoal `#26282E`, border `#343842`, silver `#A5A9B2`, bone `#EBE8E2` | text, backgrounds, secondary text, information |
+
+Text on gold buttons is dark (`rgba(31, 33, 38, 0.87)`, the theme's normal text-on-gold colour).
+See `COLOUR-REPORT.md` for how this was checked.
 
 ## Install
 
@@ -71,7 +82,7 @@ Stark-Mint-hdpi/     Xfwm (Xfce) window frames for HiDPI - only used on Xfce
 Stark-Mint-xhdpi/
 fonts/               Barlow, Barlow Semi Condensed, JetBrains Mono + their OFL licence files
 wallpaper/           2560x1440 wallpaper
-preview/             GTK3 test screenshot + the design mock-up
+preview/             GTK3 test screenshot + the original design mock-up (historical: it still shows the retired cyan)
 install.sh           installer / uninstaller
 LICENSE              GNU GPL v3 (licence of the upstream theme)
 CREDITS.md           sources, licences, modification notice

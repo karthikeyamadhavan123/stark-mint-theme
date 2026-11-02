@@ -2,127 +2,125 @@
 
 ## 1.2.0 — colour system correction (November 2026)
 
-Cyan is removed. Stark Mint now has two accent colour families only: **Metallic Gold**
-`#D6A84E` and **Stark Red** `#B3272D`, plus neutrals. No redesign: layouts, fonts,
-backgrounds and component designs are unchanged. Each old cyan use was given gold, red or a
-neutral **by what the element does**, not by a blanket swap. Line numbers below are from
-version 1.1.0. `gtk.css` and `gtk-dark.css` are identical and got the same edits.
+Cyan, teal and blue accents are removed. Stark Mint now has two accent families,
+**Metallic Gold** `#D6A84E` and **Stark Red** `#B3272D`, plus the existing neutrals.
+No redesign: layouts, fonts, sizes and backgrounds are unchanged, and no lines were added
+or removed in any CSS, rc or XML file (only values on existing lines changed).
 
-Colour mapping used:
+> **Correction note.** An earlier draft of this changelog and of `COLOUR-REPORT.md` described
+> these changes before they had been made — the files still contained cyan. This entry and the
+> report have been rewritten to match the files as they now are, and every search result in the
+> report comes from the final files.
 
-| Old | New | Where |
+Each old colour was given gold, red or a neutral **by what the element does**. Line numbers are
+the same in 1.1.0 and 1.2.0. `gtk.css` and `gtk-dark.css` are identical and got the same edits.
+
+| Old | New | Used for |
 |---|---|---|
-| `#7CD6E3` cyan | `#D6A84E` gold | primary buttons, focus rings, links, success, progress, drop highlights, checkboxes |
-| `#A6E6EF` light cyan (visited / hover links) | `#C4963F` (visited) or `#E5BA63` (hover) | links |
-| `#75B3D2` steel blue (primary pressed) | `#C4963F` | buttons |
-| `#7CD6E3` (weather "cold", clock "night") | `#C3C5C9` silver | neutral, not an action |
-| Bone text on cyan buttons | Forge `#0E0F11` text on gold | readability (was 1.4:1, now 8.7:1) |
+| `#7CD6E3` cyan | `#D6A84E` gold | primary buttons, focus rings, links, success, progress, drag-and-drop, checkboxes |
+| `#A6E6EF` light cyan | `#C4963F` (visited links) / `#E5BA63` (link hover) | links |
+| `#75B3D2`, `#5CBCCB` | `#C4963F` | pressed primary button, pressed link |
+| `#317CA5` blue | `#D6A84E` | GTK 4 dialog primary buttons |
+| bone text on cyan/blue buttons | `rgba(31, 33, 38, 0.87)` | the theme's existing text-on-gold colour (`accent_fg_color`); contrast 1.36 → 5.73 |
+| cyan for "cold" / "night" | silver `#A5A9B2` | neutral information, not an action |
+| slate-blue greys | graphite greys of the same lightness | neutral |
 
-### GTK 3 — `Stark-Mint/gtk-3.0/gtk.css`, `gtk-dark.css`
+### GTK 3 — `Stark-Mint/gtk-3.0/gtk.css`, `gtk-dark.css` (20 lines each)
 
-- Lines 804–805: base `button.suggested-action` cyan → gold, text bone → forge.
-- Lines 816, 824, 828, 843: primary-button glow, focus ring and flat-checked cyan → gold.
-- Line 820: pressed `#75b3d2` → `#c4963f`. Line 833: flat primary text → gold.
-- Lines 939, 947: links → gold. Lines 943, 951: visited links → `#c4963f`.
-- Line 3094: `levelbar block.full` → gold (success).
-- Line 3612: message-dialog primary-button text → gold.
-- Line 3912: **info bar text gold → bone** (information is neutral; matches GTK 4).
-- Line 8510: `success_color` → gold.
-- Line 6548: Firefox unchecked-checkbox hover `#56635f` (Everforest green-grey) → neutral `#5d6168`, same lightness.
-- Lines 8592, 8785, 8789 (Stark override block): token comment no longer lists "arc";
-  "Links = arc pulse" rule → gold.
+- 804–805: `button.suggested-action` cyan → gold, text bone → dark.
+- 816, 824, 828, 843: primary-button glow, focus ring, flat-checked → gold. 820: pressed `#75b3d2` → `#c4963f`. 833: flat primary text → gold.
+- 939, 947: links → gold. 943, 951: visited → `#c4963f`.
+- 3094: `levelbar block.full` → gold. 3612: message-dialog primary text → gold.
+- 3912: info bar text gold → bone (information is neutral). Info-bar *button* text (3921) stays gold.
+- 6548: Firefox checkbox hover `#56635f` (teal-grey) → graphite `#5d6168`, same lightness.
+- 8510: `success_color` → gold.
+- 8592, 8785, 8789 (Stark override block): "arc #7CD6E3" removed from the token comment; "Links = arc pulse" → gold.
 
-### GTK 4 — `Stark-Mint/gtk-4.0/gtk.css`, `gtk-dark.css`
+### GTK 4 — `Stark-Mint/gtk-4.0/gtk.css`, `gtk-dark.css` (78 lines each)
 
-- Line 160: `.success` → gold. Lines 582–644: `entry.success` focus ring, selection and icons → gold.
-- Lines 1261–1262, 1412–1413, 1540–1541, 1680–1681, 4466–4467: primary buttons
-  (suggested / menubutton / splitbutton / list-row / success-row) cyan → gold, text → forge.
-- Lines 1277, 1285, 1290, 1299: pressed, focus ring, flat text, flat checked → gold family.
-- Lines 1694, 1702: links → gold. Lines 1698, 1706: visited → `#c4963f`.
-- Line 3868: `levelbar.full` → gold. Line 4446: success-row selection → gold.
-- Lines 4810–4811, 4845–4846: message-dialog primary buttons were **blue** `#317ca5` → gold, text → forge.
-- Lines 8497–8499, 8368: `success_bg_color` / `success_color` → gold; `success_fg_color`
-  bone → dark (same as warning) so text on gold stays readable.
-- Lines 8451–8452: named colours `green_4` / `green_5` had been turned cyan by an earlier
-  recolour; restored to the standard GNOME values `#2ec27e` / `#26a269`. These are named
-  colours for apps, not theme accents (see README).
-- Lines 8531, 8724, 8728 (Stark override block): token comment and link rule → gold.
-- App-specific styling that used cyan or blue:
-  - GNOME Software category tiles: "create" purple→blue gradient → Stark red gradient (lines 6466–6476);
-    "learn" cyan gradient → gold gradient with dark text (6496–6507); "play" yellow→pink→blue-violet
-    with dark-blue text → gold gradient with forge text (6511–6522); "work" blue text → dark red
-    `#8e1f24` (6541, 6550, 6556). The "socialize" (pink) and "develop" (grey) tiles are unchanged.
-  - GNOME Software upgrade banner cyan → gold with dark text (6747–6748).
-  - GNOME Software rating lozenges: "green" (good) → gold, "blue" → neutral silver (6882–6888).
-  - GNOME Software `row.app label.warning` red → gold `#e5ba63` (6983), because warnings are gold.
-  - GNOME Weather "cold" and low temperature → silver `#c3c5c9` (7015, 7085).
-  - Search highlight `#78d5e2` → gold (7117). Clocks "night" → silver (7231–7232).
-  - Avatar colours 1–3 (blue, cyan, teal) → three neutral steel tones (7598–7609);
-    avatar 11 (periwinkle blue) → Stark red (7648–7649). Avatars 4–10 and 12–14 unchanged.
+- 160: `.success` → gold. 582–644: `entry.success` focus ring, selection and icons → gold.
+- 1261–1262, 1412–1413, 1540–1541, 1680–1681, 4466–4467: suggested / menubutton / splitbutton /
+  list-row / success-row primary buttons → gold with dark text.
+- 1277: pressed → `#c4963f`. 1285, 1290, 1299: focus ring, flat text, flat checked → gold.
+- 1694, 1702: links → gold. 1698, 1706: visited → `#c4963f`.
+- 3868: `levelbar block.full` → gold. 4446: success-row selection → gold.
+- 4810–4811, 4845–4846: dialog primary buttons were **blue** `#317ca5` → gold with dark text.
+- 8368, 8497, 8499: `success_color` / `success_bg_color` → gold. 8498: `success_fg_color` bone → dark (as warning/accent).
+- 8451–8452: named colours `green_4` / `green_5` had been turned cyan; restored to the GNOME values `#2ec27e` / `#26a269`.
+- 8531, 8724, 8728 (Stark override block): token comment and link rule → gold.
+- App-specific rules:
+  - GNOME Software tiles: "create" violet→blue → red gradient `#b3272d`→`#8e1f24` (6466–6476);
+    "learn" cyan → gold gradient with dark text (6496–6507); "play" yellow/pink/blue-violet with navy
+    text → gold gradient with dark text (6511–6522); "work" blue text → dark red `#8e1f24` (6541, 6550, 6556).
+    "socialize" and "develop" unchanged.
+  - Software upgrade banner → gold with dark text (6747–6748).
+  - Software rating lozenges: "green" → gold text on faint gold (6882–6883, olive text was unreadable on dark);
+    "blue" → silver (6887–6888).
+  - Software `row.app label.warning` red → gold `#e5ba63` (6983): warnings are gold.
+  - Weather "cold" and low temperature → silver (7015, 7085). Search highlight → gold (7117). Clocks "night" → silver (7231–7232).
+  - Avatars 1–3 (blue, cyan, teal) → three gradients made only of existing neutrals (7598–7609);
+    avatar 11 (periwinkle) → existing reds `#e05a60`→`#8e1f24` (7648–7649). Others unchanged.
 
 ### GTK 2 — `Stark-Mint/gtk-2.0/gtkrc`
 
-- Line 27: `link_color` `#7CD6E3` → `#D6A84E`, `visited_link_color` `#A6E6EF` → `#C4963F`.
+- Line 27: `link_color` → `#D6A84E`, `visited_link_color` → `#C4963F`.
 
-### Cinnamon — `Stark-Mint/cinnamon/cinnamon.css`
+### Cinnamon — `Stark-Mint/cinnamon/cinnamon.css` (17 lines)
 
-- Lines 379, 3042: links → gold. Lines 384, 3046: link hover → `#e5ba63`.
-- Lines 597–598, 629–630: panel drag-and-drop highlight → gold.
-- Lines 1133, 1157: calendar "happening now" / all-day event → gold.
-- Lines 2137–2138, 2263–2264: window-list progress bars → gold.
-- Lines 2510, 2512, 2517: workspace-graph windows were slate-blue → neutral grey of the same lightness.
+- 379, 3042: links → gold. 384, 3046: link hover → `#e5ba63`.
+- 597–598, 629–630: panel drag-and-drop highlight → gold.
+- 1133, 1157: calendar all-day "now" event and "current" countdown → gold.
+- 2137–2138, 2263–2264: window-list progress bars → gold.
+- 2510, 2512, 2517: workspace-graph windows slate-blue → graphite of the same lightness.
 
-### GNOME Shell — `Stark-Mint/gnome-shell/gnome-shell.css`
+### GNOME Shell — `Stark-Mint/gnome-shell/gnome-shell.css` (13 lines)
 
-- Lines 95–105: `.shell-link` and its hover/active backgrounds → gold.
-- Lines 1209, 1213, 1217: Looking Glass links → gold / `#e5ba63` / `#c4963f`.
-- Lines 3672, 3978, 4284: `.url-highlighter` link colour → gold.
-- Lines 3155, 3394: `prompt-dialog-error-label` was **gold** → light Stark red `#e05a60`
-  (errors are red; `#e05a60` keeps it readable at 4.5:1).
+- 95–105: `.shell-link` and its hover/active backgrounds → gold.
+- 1209, 1213, 1217: Looking Glass links → gold / `#e5ba63` / `#c4963f`.
+- 3672, 3978, 4284: `.url-highlighter` → gold.
+- 3155, 3394: `prompt-dialog-error-label` gold → light Stark red `#e05a60` (errors are red).
 
-### SVG assets
+### Metacity / Muffin, Xfwm, Plank
+
+- No changes needed: no cyan, teal or blue in `metacity-theme-*.xml`, `themerc` files, Xfwm PNGs or `dock.theme`.
+
+### SVG assets (24 values in 17 files)
 
 - Cinnamon `checkbox.svg`, `radiobutton.svg`, `add-workspace-active.svg`, GNOME Shell `checkbox.svg`:
-  cyan fill → gold, white mark → forge (matches the existing `-dark` versions).
+  cyan fill → gold, near-white mark → forge `#0e0f11` (now match the existing `-dark` versions).
 - Cinnamon `corner-ripple.svg`: cyan fill and a hidden green `#4caf50` attribute → gold.
 - `checkbox-dark.svg` (Cinnamon and Shell), `radiobutton-dark.svg`: navy-black mark `#1a1b26` → forge `#0e0f11`.
-- 8 `scale-*-marks-*-slider-symbolic.svg` files (GTK 3 and 4): unused blue gradient
-  `#1A73E8` → gold. No visible change (GTK recolours symbolic icons).
-- GNOME Shell `noise-texture.svg`: hidden `#455A64` attribute → `#444444` (the value already shown).
+- 8 `scale-*-marks-*-slider-symbolic.svg` (GTK 3 and 4): blue gradient stop `#1A73E8` → gold.
+- GNOME Shell `noise-texture.svg`: hidden blue-grey `#455A64` attributes → `#444444` (the value already drawn).
 
 ### PNG assets
 
-- GTK 3 `selectionmode-checkbox-checked(@2).png`: cyan → gold.
-- GTK 3 `scale-*-marks-*.png` (all 32): cyan and leftover Everforest green-grey pixels → gold or
-  warm grey of the same lightness. Disabled versions stay grey.
-- GTK 2 `checkbox/radio-*-active.png`: 1–6 leftover olive edge pixels each → gold hue.
+- GTK 3 `scale-*-marks-*-slider(@2).png` (the 8 non-dark files): cyan knob and its yellow-green edge pixels → gold.
+  The `-dark` and `-disabled` files were already gold/grey and are unchanged.
+- GTK 3 `selectionmode-checkbox-checked(@2).png`: cyan box → now the same image as the existing `-dark` version (gold box, dark tick).
 - `thumbnail.png` (Cinnamon, GTK 3, GTK 4, Metacity): the small cyan dot → gold.
-- `wallpaper/stark-mint-wallpaper.png`: cyan arc-reactor triangle → Stark red (same faint style as
-  the gold ring); the cyan glow in the lower-left corner → neutral graphite; the caption's
-  coloured sub-pixel font fringes → plain grey. Layout and everything else unchanged.
-- `preview/gtk3-widgets.png`: re-taken with the updated theme.
+- `wallpaper/stark-mint-wallpaper.png`: teal triangle → faint Stark red (same strength as before);
+  the steel-blue tint in the lower-left glow and the blue text fringes → graphite (colour strength capped at the
+  graphite level, brightness unchanged). Size, layout and gold ring unchanged.
+- `preview/gtk3-widgets.png`: re-taken with the 1.2.0 theme (`gtk3-widget-factory`, virtual display).
 
 ### Metadata and docs
 
 - `index.theme`: description no longer says "arc pulse".
 - `install.sh`: `VERSION` 1.1.0 → 1.2.0 (no other change).
-- `README.md`: new colour-system section and state table; note on the design mock-up.
-- Added `COLOUR-REPORT.md` (the validation report for this release).
+- `README.md`: version, new colour table (replaces "cyan for links and success"), note that the mock-up is historical.
+- `COLOUR-REPORT.md`: rewritten with the real search results.
 
 ### Left unchanged on purpose
 
-- **`preview/design-reference.png`**, the original design mock-up, still shows "Arc Cyan" and
-  "Arc Pulse". Editing labels inside an image would make it a misleading record, so it is kept
-  as-is and README marks it as historical.
-- **Named colour lists** for apps: GTK 3 `STRAWBERRY_*`, `BLUEBERRY_*`, `LIME_*` and similar;
-  GTK 4 `blue_*`, `green_*` and similar. The theme never uses them.
-- **GNOME Settings accent picker** swatches (`accent-button.teal` and similar): they show the colour
-  being chosen, and GTK skips these lines anyway.
-- **Cool dark neutrals** such as `#1F2126`, `#343842`, `#2A2D34`: these are the existing graphite
-  family, not accents.
-- Existing red/gold choices that already fit the rules, for example urgent windows in red.
-- **Neutral values:** the theme keeps `#26282E` (charcoal) and `#A5A9B2` (muted silver) where they
-  were. Spec silver `#C3C5C9` is used for the new informational states.
+- `preview/design-reference.png`: the original mock-up still shows "Arc Cyan". It is a record of the
+  original design, not a theme asset.
+- Named colour lists for apps (GTK 3 `BLUEBERRY_*`, `LIME_*`, `GRAPE_*`; GTK 4 `blue_1`–`5`, `green_*`, `purple_*`):
+  no theme rule uses them, and an app asking for "blue" by name should still get blue.
+- GNOME Settings accent-picker rules (`accent-button.teal`, `.blue`, …): they only reference the
+  colour being chosen and declare no colour. GTK skips these lines anyway.
+- Green-grey and olive leftovers from Everforest that are not cyan, teal or blue (disabled slider
+  knobs `#9da9a0`, a few edge pixels in GTK 2 and `-dark` slider PNGs). See `COLOUR-REPORT.md`.
 
 ## 1.1.0 — technical correction release (November 2026)
 
