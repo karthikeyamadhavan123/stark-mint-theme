@@ -325,6 +325,26 @@ If you run Stark Mint on a desktop that is not listed as tested, a compatibility
 Fixes and detailed notes are in [CHANGELOG.md](CHANGELOG.md).
 
 ---
+### Flatpak Application Support
+
+Flatpak applications run in a sandbox and may not automatically have access to user-installed GTK themes.
+
+To apply Stark Mint to Flatpak applications:
+
+1. Install and open [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal).
+2. Select the application you want to customise, or **All Applications**.
+3. Under **Filesystem → Other files**, add:
+
+   `~/.themes:ro`
+
+4. Under **Environment → Variables**, add:
+
+   `GTK_THEME=Stark-Mint`
+
+5. Restart the affected application.
+
+**Note:** Some applications, particularly those using libadwaita, may not support complete GTK theme customisation. Appearance can vary between applications.
+---
 
 ## Planned work
 
