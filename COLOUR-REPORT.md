@@ -112,9 +112,13 @@ Cinnamon and GNOME Shell CSS could only be checked for syntax, not on a running 
 
 ## 8. What is left, and why
 
-1. **`preview/design-reference.png`** — the original design mock-up, with an "Arc Cyan #7CD6E3"
-   swatch. Kept as a record of the original design; README marks it as historical. It is not
-   installed. It can be deleted if you prefer.
+1. **`preview/design-reference.png`** — regenerated for 1.2.0. The earlier mock-up carried an
+   "Arc Cyan #7CD6E3" swatch; the current sheet does not. A full pixel scan of all 1,590,400
+   pixels found no cyan, turquoise, teal, blue or purple. Its palette swatches match the theme
+   files exactly: Forge `#0E0F11`, Graphite `#18191D`, Surface `#1F2126`, Charcoal `#26282E`,
+   Border `#343842`, Silver `#A5A9B2`, Bone `#EBE8E2`, Metallic Gold `#D6A84E`, Stark Red
+   `#B3272D`. It is a design target rather than a screenshot of a running desktop, is referenced
+   from the README preview section, and is not installed.
 2. **Named colour lists** — GTK 3 `BLUEBERRY_*` (8555–8559), GTK 4 `BLUEBERRY_*` (8413–8417) and
    `blue_1`–`5` (8443–8447), plus the green and purple lists. No theme rule uses them (0 references).
    They exist so an app that asks for "blue" by name gets blue.

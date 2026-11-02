@@ -2,81 +2,150 @@
 
 **Forged in graphite. Defined by red and gold.**
 
-Stark Mint is an open-source desktop theme inspired by the Iron Man Mark III armor and Stark Industries aesthetic.
+Stark Mint is an open-source desktop theme inspired by the Iron Man Mark III armour and the Stark Industries aesthetic.
 
-Built on the Everforest-GTK-Theme foundation, Stark Mint modifies and extends the original theme to establish its own visual identity: a dark graphite interface with metallic gold interaction accents and Stark red identity details.
+It is built on the `Everforest-Green-Dark` variant of [Everforest-GTK-Theme](https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme), which has been modified and extended to create its own visual identity: a dark graphite interface with metallic gold interaction accents and Stark red identity details.
 
-The project aims to provide a cohesive, industrial and modern desktop experience across supported Linux desktop components.
+The project targets Linux Mint Cinnamon first, with generic styling for other GTK desktops.
 
-## Design Philosophy
+**Current version:** 1.2.0
 
-Stark Mint follows a deliberately restricted visual system.
+---
+
+## Contents
+
+- [Design philosophy](#design-philosophy)
+- [Preview](#preview)
+- [Colour palette](#colour-palette)
+- [Typography](#typography)
+- [What is implemented](#what-is-implemented)
+- [Installation](#installation)
+- [Uninstallation](#uninstallation)
+- [Manual configuration](#manual-configuration)
+- [Project layout](#project-layout)
+- [Dependencies](#dependencies)
+- [Compatibility and testing](#compatibility-and-testing)
+- [Known limitations](#known-limitations)
+- [Planned work](#planned-work)
+- [Reporting bugs and contributing](#reporting-bugs-and-contributing)
+- [Licensing and attribution](#licensing-and-attribution)
+- [Disclaimer](#disclaimer)
+
+---
+
+## Design philosophy
+
+Stark Mint uses a deliberately narrow visual system.
 
 - **Graphite** forms the foundation of the interface.
-- **Metallic Gold** represents interaction, focus and active states.
-- **Stark Red** represents identity, errors and destructive actions.
-- No third accent colour is part of the design.
+- **Metallic Gold** marks interaction: focus, selection and active states.
+- **Stark Red** marks identity, errors and destructive actions.
+- There is no third accent colour.
 
-The objective is not simply to create another dark theme. It is to build a consistent visual identity while preserving readability, usability and desktop conventions.
+The goal is not simply another dark theme. It is a consistent visual identity that still respects readability, usability and normal desktop conventions.
 
-Read [DESIGN.md](DESIGN.md) for the complete design principles and colour guidelines.
+[DESIGN.md](DESIGN.md) is the full reference for the design rules.
+
+---
 
 ## Preview
 
-### GTK Widgets
+### GTK 3 widgets
 
-![Stark Mint GTK widget preview](preview/gtk3-widgets.png)
+![Stark Mint GTK 3 widget preview](preview/gtk3-widgets.png)
 
-The preview demonstrates the theme's GTK controls, including buttons, switches, sliders, selection and focus states.
+A screenshot of the GTK widget factory running under Stark Mint. It shows buttons, entries, switches, sliders, lists and selection and focus states.
 
-More screenshots of the Cinnamon desktop, file manager and application menu will be added as the project develops.
+### Design reference
 
-## Colour Palette
+![Stark Mint 1.2.0 design reference](preview/design-reference.png)
+
+The 1.2.0 design reference sheet. It shows the intended Cinnamon panel, menu and file manager layout, GTK control states, notifications, and the full colour and typography system.
+
+This sheet is a design target, not a screenshot of a running desktop. Where it differs from the shipped theme, the shipped theme is the current state of the project.
+
+Screenshots of a real Cinnamon desktop will be added as the project is tested on more systems. See [How to contribute](CONTRIBUTING.md) if you would like to send one.
+
+---
+
+## Colour palette
+
+These values are taken from the theme files themselves.
 
 | Colour | Hex | Purpose |
 |---|---|---|
-| Forge | `#0E0F11` | Deep background |
-| Graphite | `#18191D` | Main background |
-| Surface | `#1F2126` | Raised surfaces |
-| Charcoal | `#26282E` | Secondary surfaces |
-| Border | `#343842` | Separators and outlines |
-| Silver | `#A5A9B2` | Secondary text |
+| Forge | `#0E0F11` | Deepest background: entries, rails |
+| Graphite | `#18191D` | Main background: views, panels |
+| Surface | `#1F2126` | Raised surfaces: windows, cards |
+| Charcoal | `#26282E` | Secondary surfaces: buttons |
+| Border | `#343842` | Separators and hairlines |
+| Silver | `#A5A9B2` | Secondary text and information |
 | Bone | `#EBE8E2` | Primary text |
-| Stark Red | `#B3272D` | Identity and destructive actions |
-| Metallic Gold | `#D6A84E` | Focus and interaction |
+| Metallic Gold | `#D6A84E` | Focus, selection, primary actions, warnings |
+| Stark Red | `#B3272D` | Identity, errors, destructive actions, close |
 
-Controlled shades of red and gold are used for hover, pressed and other interface states.
+### Controlled variations
 
-See [COLOUR-REPORT.md](COLOUR-REPORT.md) for the colour audit.
+These are shades of the two accent families. They are not extra accent colours.
 
-## Features
+| Colour | Hex | Use |
+|---|---|---|
+| Light Gold | `#E5BA63` | Hover and raised gold surfaces |
+| Deep Gold | `#C4963F` | Pressed gold, visited links |
+| Light Red | `#E05A60` | Red text on dark backgrounds |
+| Error Red | `#C93037` | Error state colour (`error_color`), close button hover in window frames |
+| Deep Red | `#8E1F24` | Pressed red |
 
-- Dark graphite visual foundation.
-- Stark Red and Metallic Gold accent system.
-- GTK 2, GTK 3 and GTK 4 theme components.
-- Cinnamon desktop styling.
+[COLOUR-REPORT.md](COLOUR-REPORT.md) records the colour audit and the measured contrast ratios.
+
+---
+
+## Typography
+
+The theme references three font families, all bundled under `fonts/`.
+
+| Family | Used for |
+|---|---|
+| Barlow | General interface text, menus, labels, body copy |
+| Barlow Semi Condensed SemiBold | Title bars and headings |
+| JetBrains Mono | Terminals, file sizes, timestamps, clock |
+
+When you let the installer change your desktop settings, it sets the interface font to Barlow 10, the title bar font to Barlow Semi Condensed SemiBold 10, and the monospace font to JetBrains Mono 10. You can change these afterwards without breaking the theme.
+
+---
+
+## What is implemented
+
+- GTK 2, GTK 3 and GTK 4 styling.
+- Cinnamon desktop styling: panel, menu, notifications, OSD, applets.
 - GNOME Shell styling.
-- Metacity/Muffin window decorations.
-- Xfwm window decorations, including HiDPI variants.
-- Plank dock theme.
-- Barlow and JetBrains Mono fonts.
-- Installation and uninstallation script with backup support.
+- Metacity/Muffin window decorations, in three frame variants.
+- Xfwm window decorations, with HiDPI and extra-HiDPI variants.
+- A Plank dock theme.
+- Bundled Barlow and JetBrains Mono fonts.
+- A Stark Mint wallpaper.
+- An installer and uninstaller with backups.
 
-Component availability and testing status vary by desktop environment and version. See the compatibility section below.
+Not every component has been tested on a running desktop. See [Compatibility and testing](#compatibility-and-testing) for the honest status of each.
+
+---
 
 ## Installation
 
 ### Requirements
 
-- A Linux desktop environment with support for the relevant theme components.
+- A Linux desktop that can use GTK themes.
 - A terminal.
-- Git is optional if you clone the repository.
+- Bash.
+- For GTK 2 applications: the Adwaita and pixmap GTK 2 engines. On Debian and Mint these come from `gnome-themes-extra` and `gtk2-engines-pixbuf`. Without them, GTK 2 applications fall back to a default look. GTK 3, GTK 4 and Cinnamon do not need these.
 
-### Method 1 — Download ZIP
+No root access is needed. Everything is installed under your home directory.
 
-1. Download the Stark Mint repository as a ZIP.
-2. Extract the archive.
-3. Open a terminal inside the extracted `Stark-Mint-Theme` directory.
+### Method 1 — download a ZIP
+
+1. Download the repository as a ZIP from GitHub.
+2. Extract it.
+3. Open a terminal in the extracted folder.
 4. Run:
 
 ```bash
@@ -84,45 +153,46 @@ chmod +x install.sh
 ./install.sh
 ```
 
-The installer will:
-
-1. Copy the theme into `~/.themes`.
-2. Install the bundled fonts into `~/.local/share/fonts/StarkMint`.
-3. Copy the wallpaper into `~/Pictures/Stark-Mint`.
-4. Ask before changing desktop settings.
-
-If you decline the settings changes, the files are still installed but your current desktop settings remain unchanged.
-
-### Method 2 — Clone the repository
+### Method 2 — clone the repository
 
 ```bash
-git clone git@github.com:karthikeyamadhavan123/stark-mint-theme.git
-cd Stark-Mint-Theme
+git clone https://github.com/karthikeyamadhavan123/stark-mint-theme.git
+cd stark-mint-theme
 chmod +x install.sh
 ./install.sh
 ```
 
-Replace `<REPOSITORY_URL>` with the actual GitHub repository URL.
+### What the installer does
+
+1. Copies `Stark-Mint`, `Stark-Mint-hdpi` and `Stark-Mint-xhdpi` into `~/.themes`.
+2. Installs the bundled fonts into `~/.local/share/fonts/StarkMint`.
+3. Copies the wallpaper into `~/Pictures/Stark-Mint`.
+4. Asks before changing any desktop setting.
+
+If you say no to step 4, the files are still installed but your current settings are left alone. You can then apply the theme yourself from your desktop's appearance settings.
+
+Nothing is deleted. Anything that would be replaced is first moved into a timestamped backup folder.
 
 ### Installer options
 
 | Option | Description |
 |---|---|
 | `--apply` | Apply the theme, fonts and wallpaper without asking. |
-| `--no-apply` | Copy files without changing desktop settings. |
+| `--no-apply` | Copy files only; never change desktop settings. |
 | `--no-fonts` | Skip font installation and font settings. |
 | `--no-wallpaper` | Skip wallpaper installation and settings. |
 | `--libadwaita` | Also apply GTK 4 styling through `~/.config/gtk-4.0`. |
 | `--uninstall` | Uninstall Stark Mint and optionally restore previous settings. |
-| `--yes` | Automatically answer yes to installer questions. |
+| `--yes`, `-y` | Answer yes to questions. Same as `--apply` when installing. |
+| `-h`, `--help` | Show the built-in help. |
 
-**Important:** The `--libadwaita` option changes GTK 4 configuration under your home directory and can affect all GTK 4 applications. Existing configuration files are backed up first.
+**Note on `--libadwaita`:** this writes into `~/.config/gtk-4.0`, which affects every GTK 4 and libadwaita application, not just one. Existing files there are backed up first.
 
-No root or `sudo` privileges are required.
+---
 
 ## Uninstallation
 
-To uninstall Stark Mint, run the following from the extracted project directory:
+Run this from the project folder:
 
 ```bash
 ./install.sh --uninstall
@@ -130,11 +200,11 @@ To uninstall Stark Mint, run the following from the extracted project directory:
 
 The uninstaller:
 
-- Asks whether to restore previous desktop settings.
-- Moves installed files into the backup directory rather than immediately deleting them.
+- Asks whether to restore your previous desktop settings.
+- Moves installed files into the backup folder instead of deleting them.
 - Restores files that were backed up before installation.
 
-Backups are stored under:
+Backups live under:
 
 ```text
 ~/.local/share/stark-mint/
@@ -146,21 +216,21 @@ To restore only your previous desktop settings:
 bash ~/.local/share/stark-mint/restore-settings.sh
 ```
 
-Once you are certain you no longer need the backups, you can remove the backup directory.
+Once you are sure you no longer need them, you can delete the backup folder yourself.
 
-## Manual Configuration
+---
 
-Some desktop customisations are controlled by the desktop environment rather than the theme itself.
+## Manual configuration
+
+Some touches are controlled by the desktop, not by the theme.
 
 ### Cinnamon menu button
 
-Right-click the Menu button, select Configure, open the Panel section and set its text to `MENU`.
+Right-click the Menu button, choose Configure, open the Panel section and set its text to `MENU`.
 
 ### Cinnamon clock
 
-Right-click the clock, open Configure and enable a custom date format.
-
-Example:
+Right-click the clock, choose Configure, enable a custom date format and use something like:
 
 ```text
 %a %b %e  %H:%M:%S
@@ -168,103 +238,129 @@ Example:
 
 ### GNOME Shell
 
-Enable the User Themes extension before applying the GNOME Shell theme.
+Enable the User Themes extension before the GNOME Shell theme can be applied.
 
-Run:
+---
 
-```bash
-./install.sh --apply
-```
+## Project layout
 
-## Theme Components
-
-| Directory | Description |
+| Path | Contents |
 |---|---|
-| `Stark-Mint/` | Main GTK, Cinnamon, GNOME Shell, Metacity and Plank theme |
+| `Stark-Mint/` | Main theme: GTK 2, GTK 3, GTK 4, Cinnamon, GNOME Shell, Metacity, Xfwm, Plank |
 | `Stark-Mint-hdpi/` | HiDPI Xfwm window decorations |
 | `Stark-Mint-xhdpi/` | Extra-HiDPI Xfwm window decorations |
-| `fonts/` | Bundled Barlow and JetBrains Mono fonts |
-| `wallpaper/` | Stark Mint desktop wallpaper |
-| `preview/` | Project screenshots |
+| `fonts/` | Bundled Barlow and JetBrains Mono fonts and their licences |
+| `wallpaper/` | Stark Mint wallpaper |
+| `preview/` | Screenshots and the design reference sheet |
+| `install.sh` | Installer and uninstaller |
 
-### External dependencies
+---
 
-The theme references the following icon and cursor themes:
+## Dependencies
 
-- `Tela-circle-Dark`
-- `Everforest-cursors`
+### Bundled
 
-These are not bundled with Stark Mint. Install them separately if you want those exact icon and cursor appearances.
+Fonts only. Barlow, Barlow Semi Condensed and JetBrains Mono ship with the theme under the SIL Open Font License 1.1.
 
-## Compatibility and Testing
+### Referenced but not bundled
+
+`Stark-Mint/index.theme` points at two themes that Stark Mint does **not** ship:
+
+| Theme | Type |
+|---|---|
+| `Tela-circle-Dark` | Icon theme |
+| `Everforest-cursors` | Cursor theme |
+
+Install these separately if you want the exact icon and pointer appearance. Without them your desktop falls back to whatever icon and cursor themes you already have. Everything else in Stark Mint still works.
+
+Stark Mint does not yet have its own icon theme. Building one is an open area for contributors — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## Compatibility and testing
 
 Stark Mint primarily targets Linux Mint Cinnamon.
 
-The following table distinguishes between implementation checks and actual desktop testing.
+The table below separates what has been *checked in the files* from what has been *tested on a running desktop*. Please do not read a checked entry as a tested one.
 
-| Component | Current status |
+| Component | Status |
 |---|---|
-| GTK 2 | Included; runtime compatibility not yet fully verified |
-| GTK 3 | Loaded with GTK 3.24 parser; no new errors reported |
-| GTK 4 | Parser checked; visual testing still required |
+| GTK 2 | Included; runtime behaviour not yet verified |
+| GTK 3 | Loads under the GTK 3.24 parser with no new errors |
+| GTK 4 | Parser checked; visual testing still needed |
 | Cinnamon 6.4 | Selectors checked against Cinnamon 6.4.13 source; runtime testing pending |
 | Cinnamon 6.6+ | Menu selectors checked against Cinnamon 6.6.4 class names; runtime testing pending |
 | Cinnamon 6.2 and older | Not verified |
 | GNOME Shell | Syntax checked; runtime testing pending |
 | Metacity/Muffin | XML and referenced assets checked; runtime testing pending |
 | Xfwm | Included; runtime testing pending |
-| Installer | Shell syntax and ShellCheck verified; tested in an isolated user environment, not yet fully validated on a real desktop |
+| Installer | Shell syntax and ShellCheck clean; exercised in an isolated user environment, not yet validated on a full desktop |
 
-Testing status will be updated as more desktop environments and versions are verified.
+If you run Stark Mint on a desktop that is not listed as tested, a compatibility report is a genuinely useful contribution. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Known Limitations
+---
 
-- GTK cannot force all window titles to use uppercase text.
-- Some Cinnamon window-button settings are controlled independently of the theme.
-- Some upstream CSS properties may be ignored by particular desktop versions.
-- GTK 4 and libadwaita applications may not follow third-party themes consistently.
-- Not every desktop component has been tested on a running desktop environment.
+## Known limitations
 
-Known limitations and fixes are documented in [CHANGELOG.md](CHANGELOG.md).
+- GTK cannot force every window title into uppercase, so title case varies by application.
+- Some Cinnamon window-button settings are controlled by Cinnamon, not by the theme.
+- Some CSS properties inherited from upstream are ignored by particular desktop versions.
+- GTK 4 and libadwaita applications do not follow third-party themes consistently.
+- Stark Mint has no icon theme of its own yet and relies on an external one.
+- Most components have been checked in the files but not yet confirmed on a running desktop.
 
-## Contributing
+Fixes and detailed notes are in [CHANGELOG.md](CHANGELOG.md).
 
-Contributions, bug reports and suggestions are welcome.
+---
 
-You can help improve:
+## Planned work
 
-- GTK and Cinnamon styling.
-- Window decorations.
-- Icon coverage and design.
-- Accessibility and contrast.
-- Compatibility.
-- Installation and packaging.
-- Documentation.
+These are intentions, not promises, and not yet implemented:
 
-Before contributing, please read:
+- A Stark Mint icon theme, so the project stops depending on an external icon set.
+- Real desktop screenshots for Cinnamon, the file manager and the application menu.
+- Runtime testing across more Cinnamon, GNOME and Xfce versions.
+- Optional, modular styling for individual applications.
+- Further accessibility and contrast work.
 
-- [DESIGN.md](DESIGN.md) — Project identity and design principles.
-- [CONTRIBUTING.md](CONTRIBUTING.md) — Contribution guidelines.
+---
 
-The goal is to improve the implementation without compromising the Stark Mint identity.
+## Reporting bugs and contributing
+
+Bug reports, compatibility reports, screenshots and code are all welcome.
+
+**To report a bug**, open a GitHub Issue and include your distribution and version, your desktop environment and version, the affected component, what you expected, what happened, and a screenshot if the problem is visual.
+
+**To contribute**, read these first:
+
+- [DESIGN.md](DESIGN.md) — the visual identity and the rules that protect it.
+- [CONTRIBUTING.md](CONTRIBUTING.md) — areas open for contribution and the pull request workflow.
+
+Contributions are not limited to bug fixes. Icons, GTK styling, Cinnamon components, window decorations, optional application themes, accessibility and documentation are all open.
 
 **Improve the execution. Preserve the identity.**
 
-## Licensing and Attribution
+---
 
-Stark Mint is based on Everforest-GTK-Theme by Fausto-Korpsvart.
+## Licensing and attribution
 
-The upstream theme is distributed under the GNU General Public License version 3. Individual components and bundled assets may have their own licensing and attribution requirements.
+Stark Mint is a modified version of Everforest-GTK-Theme (`Everforest-Green-Dark`) by Fausto-Korpsvart, which is licensed under the GNU General Public License version 3.
 
-- [LICENSE](LICENSE) — Main GPL-3.0 licence.
-- [CREDITS.md](CREDITS.md) — Upstream sources, modifications and third-party licences.
+The root [LICENSE](LICENSE) is the full GPL-3.0 text. It covers the theme files derived from that upstream work.
 
-Bundled fonts retain their respective SIL Open Font Licence files.
+It does **not** automatically cover every file in this repository. Some components keep their own licences:
 
-Please review the individual notices before redistributing modified or extracted components.
+- `Stark-Mint/gnome-shell/gnome-shell.css` carries a GNU LGPL 2.1 header from GNOME Shell.
+- The bundled fonts are under the SIL Open Font License 1.1, with their licence files in `fonts/`.
+
+[CREDITS.md](CREDITS.md) lists every component, its origin and its licence, and marks the items that still need the maintainer to confirm their status.
+
+Please read those notices before you redistribute this theme or any part of it.
+
+---
 
 ## Disclaimer
 
-Stark Mint is an independent community project inspired by the Iron Man visual aesthetic.
+Stark Mint is an independent, community-driven project inspired by the Iron Man visual aesthetic.
 
-It is not affiliated with, endorsed by or sponsored by Marvel, Disney, Linux Mint or the upstream theme authors. All respective trademarks and intellectual property belong to their owners.
+It is not affiliated with, endorsed by or sponsored by Marvel, Disney, Linux Mint, the Linux Mint team, or the authors of the upstream theme. "Iron Man", "Stark Industries", "Marvel" and "Linux Mint" belong to their respective owners.
