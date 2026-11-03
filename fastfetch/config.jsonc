@@ -3,8 +3,10 @@
     "logo": {
     "type": "file",
     "source": "~/.config/fastfetch/logo.txt",
-    "paddingLeft": 2,
-    "paddingRight": 4
+    "padding": {
+        "left": 2,
+        "right": 4
+    }
   },
     "display": {
         "separator": "  ",
