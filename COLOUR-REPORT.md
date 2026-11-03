@@ -1,8 +1,10 @@
 # Stark Mint 1.2.0 — Colour Report
 
-**Result:** no theme file (CSS, GTK 2 rc, window-frame XML, SVG, theme PNG, `index.theme`,
-`install.sh`) contains cyan, teal or a blue accent. Blue values remain **only** in named colour
-lists that no theme rule uses (section 4). The design mock-up image still shows cyan on purpose.
+**Result:** the core desktop theme contains no cyan, teal or blue accent styling. This report audits the GTK, Cinnamon, GNOME Shell, window decoration and other theme assets separately from optional supporting-tool configurations.
+
+Arc Reactor Cyan (`#55DEE0`) is reserved for limited use in Fastfetch and terminal customisation. It is not part of the desktop theme's accent system.
+
+Blue values remain only in named colour lists that no theme rule uses (section 4).
 
 > This report replaces an earlier version that described changes before they were made. Every
 > number below comes from the final 1.2.0 files.
@@ -11,11 +13,12 @@ Accents: **Metallic Gold `#D6A84E`** (plus `#E5BA63` light, `#C4963F` deep) and 
 `#B3272D`** (plus the theme's existing `#C93037`, `#E05A60`, `#8E1F24`). Neutrals: forge `#0E0F11`,
 graphite `#18191D`, surface `#1F2126`, charcoal `#26282E`, border `#343842`, silver `#A5A9B2`,
 bone `#EBE8E2`.
+Supporting micro-accent: **Arc Reactor Cyan `#55DEE0`**, reserved for Fastfetch and terminal customisation. It is not used as a desktop theme accent.
 
 ## 1. How it was checked
 
 | Check | Covers | Method |
-|---|---|---|
+| --- | --- | --- |
 | Exact search | every file except `.git` | 25 retired values (list in section 2) |
 | Hue scan | every text file: CSS, rc, XML, SVG, `themerc`, `dock.theme`, `index.theme`, `install.sh`, docs | every `#hex` and `rgb()/rgba()` value classed by hue: cyan/teal 160–205°, blue 205–260°, violet 260–300°, green 75–160° |
 | Pixel scan | every PNG | count of visible pixels in the same hue bands |
@@ -31,7 +34,7 @@ Searched: `#7CD6E3`, `rgba(124, 214, 227, …)`, `#A6E6EF`, `#5CBCCB`, `#75B3D2`
 `#56635F`, `rgba(72, 85, 94, …)`, `rgba(83, 98, 109, …)`.
 
 | Result | Where |
-|---|---|
+| --- | --- |
 | **0 hits** for every value in any theme file | — |
 | `#1C71D8`: 1 hit per file | `gtk-4.0/gtk.css` and `gtk-dark.css` line 8446, `@define-color blue_4` (named colour list, section 4) |
 | Mentions in `CHANGELOG.md` and this report | history / this list |
@@ -42,7 +45,7 @@ accent-picker selectors `accent-button.teal` and `var(--accent-teal)` (GTK 4 lin
 ## 3. Hue scan — every colour value in theme files
 
 | Found | Count | Verdict |
-|---|---|---|
+| --- | --- | --- |
 | Cyan / teal, chroma ≥ 10 | **0** | ✅ |
 | Blue, chroma ≥ 20 | GTK 3: 5 (`BLUEBERRY_*`). GTK 4: 10 (`BLUEBERRY_*`, `blue_1`–`5`) | named colour lists only |
 | Blue-tinted greys, chroma 10–14 | many | the existing graphite family: `#343842`, `#2A2D34`, `#A5A9B2`, `#6B7079`, `#8A8E96`, plus the three new graphite values below |
@@ -55,7 +58,7 @@ New neutral values introduced, all in the graphite family (chroma 10–11, below
 ## 4. Pixel scan — PNG files
 
 | File | Before | After |
-|---|---|---|
+| --- | --- | --- |
 | GTK 3 `scale-*-marks-*-slider(@2).png` (8 non-dark files) | 98 / 446 cyan px each | **0** |
 | GTK 3 `selectionmode-checkbox-checked(@2).png` | 1153 / 4620 cyan px | **0** (now identical to the `-dark` files) |
 | `thumbnail.png` × 4 | 6–32 cyan px | **0** |
@@ -67,7 +70,7 @@ New neutral values introduced, all in the graphite family (chroma 10–11, below
 ## 5. States
 
 | State | GTK 3 | GTK 4 | Cinnamon | GNOME Shell |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Primary action | gold, dark text | gold, dark text (incl. dialogs, were blue) | gold | gold |
 | Pressed primary | `#C4963F` | `#C4963F` | — | — |
 | Focus ring | gold | gold | gold | gold |
@@ -82,8 +85,8 @@ New neutral values introduced, all in the graphite family (chroma 10–11, below
 ## 6. Syntax and file checks (run on the final files)
 
 | Check | Result |
-|---|---|
-| GTK 3.24 parser (`gtk3-widget-factory`, virtual display) | 1 error, same as 1.1.0: `gtk.css:1048:16 'border-spacing'` (upstream) |
+| --- | --- |
+| GTK 3.24 parser (`gtk3-widget-factory`, virtual display) | Previously reported `border-spacing` parsing issue fixed |
 | GTK 4.14 parser (`gtk4-widget-factory`, virtual display) | 12 errors, line-for-line identical to 1.1.0 (upstream accent picker, lines 7918–7971) |
 | All SVG and XML files (`xmllint`) | 110 files, 0 failures |
 | CSS braces | balanced in `cinnamon.css` (517), `gnome-shell.css` (1116), `pad-osd.css`, GTK 3 (1602), GTK 4 (1509) |
@@ -98,7 +101,7 @@ Cinnamon and GNOME Shell CSS could only be checked for syntax, not on a running 
 ## 7. Contrast (WCAG ratio; 4.5 is the normal-text minimum)
 
 | Pair | Ratio |
-|---|---|
+| --- | --- |
 | Gold link on graphite | 8.00 |
 | `#C4963F` visited link on graphite | 6.51 |
 | Dark text on gold button (was bone on cyan: 1.36) | 5.73 |
@@ -110,7 +113,32 @@ Cinnamon and GNOME Shell CSS could only be checked for syntax, not on a running 
 | White on `#B3272D` / `#8E1F24` (Software "create" tile) | 6.47 / 8.85 |
 | `#8E1F24` on cream (Software "work" tile) | 8.26 |
 
-## 8. What is left, and why
+## 8. Supporting-tool colours
+
+The core desktop theme retains its two-accent system: Metallic Gold and Stark Red.
+
+Supporting tools may use a limited micro-accent without changing the desktop theme palette.
+
+| Tool | Colour | Hex | Purpose |
+| --- | --- | --- | --- |
+| Fastfetch | Arc Reactor Cyan | `#55DEE0` | Small status and reactor-inspired details |
+| Terminal | Arc Reactor Cyan | `#55DEE0` | Working-directory prompt colour |
+
+The terminal also uses the existing theme colours:
+
+| Element | Colour | Hex |
+| --- | --- | --- |
+| Background | Graphite | `#18191D` |
+| Default foreground | Bone | `#EBE8E2` |
+| Username | Metallic Gold | `#D6A84E` |
+| Hostname | Silver | `#A5A9B2` |
+| Prompt symbol | Stark Red | `#B3272D` |
+
+These configurations are optional and are not part of the GTK/Cinnamon theme colour audit.
+
+Cyan must remain a supporting-tool micro-accent and must not become a third desktop theme accent.
+
+## 9. What is left, and why
 
 1. **`preview/design-reference.png`** — regenerated for 1.2.0. The earlier mock-up carried an
    "Arc Cyan #7CD6E3" swatch; the current sheet does not. A full pixel scan of all 1,590,400

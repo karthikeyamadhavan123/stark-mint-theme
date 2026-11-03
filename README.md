@@ -40,7 +40,7 @@ Stark Mint uses a deliberately narrow visual system.
 - **Graphite** forms the foundation of the interface.
 - **Metallic Gold** marks interaction: focus, selection and active states.
 - **Stark Red** marks identity, errors and destructive actions.
-- There is no third accent colour.
+- **Arc Reactor Cyan** is reserved for occasional, small details in supporting tools such as Fastfetch and the terminal. It is not a third theme accent.
 
 The goal is not simply another dark theme. It is a consistent visual identity that still respects readability, usability and normal desktop conventions.
 
@@ -68,12 +68,28 @@ Screenshots of a real Cinnamon desktop will be added as the project is tested on
 
 ---
 
+### Fastfetch
+
+Stark Mint includes an optional Fastfetch configuration and logo artwork.
+
+The configuration follows the project's visual identity while displaying dynamic system information.
+
+![Stark Mint Fastfetch preview](preview/fastfetch.png)
+
+### Terminal
+
+The terminal has an optional colour configuration and a custom Bash prompt following the Stark Mint palette.
+
+These are manual customisations and are not automatically applied by the theme installer.
+
+![Stark Mint terminal preview](preview/terminal.png)
+
 ## Colour palette
 
 These values are taken from the theme files themselves.
 
 | Colour | Hex | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Forge | `#0E0F11` | Deepest background: entries, rails |
 | Graphite | `#18191D` | Main background: views, panels |
 | Surface | `#1F2126` | Raised surfaces: windows, cards |
@@ -89,7 +105,7 @@ These values are taken from the theme files themselves.
 These are shades of the two accent families. They are not extra accent colours.
 
 | Colour | Hex | Use |
-|---|---|---|
+| --- | --- | --- |
 | Light Gold | `#E5BA63` | Hover and raised gold surfaces |
 | Deep Gold | `#C4963F` | Pressed gold, visited links |
 | Light Red | `#E05A60` | Red text on dark backgrounds |
@@ -100,12 +116,19 @@ These are shades of the two accent families. They are not extra accent colours.
 
 ---
 
+### Supporting micro-accent
+
+| Colour | Hex | Use |
+|---|---|---|
+| Arc Reactor Cyan | `#55DEE0` | Small reactor-inspired details and special active indicators in supporting tools |
+Cyan is not part of the desktop theme's accent system. It is reserved for limited use in Fastfetch and terminal customisation. It must not replace gold for interaction or red for identity and danger.
+
 ## Typography
 
 The theme references three font families, all bundled under `fonts/`.
 
 | Family | Used for |
-|---|---|
+| --- | --- |
 | Barlow | General interface text, menus, labels, body copy |
 | Barlow Semi Condensed SemiBold | Title bars and headings |
 | JetBrains Mono | Terminals, file sizes, timestamps, clock |
@@ -176,7 +199,7 @@ Nothing is deleted. Anything that would be replaced is first moved into a timest
 ### Installer options
 
 | Option | Description |
-|---|---|
+| --- | --- |
 | `--apply` | Apply the theme, fonts and wallpaper without asking. |
 | `--no-apply` | Copy files only; never change desktop settings. |
 | `--no-fonts` | Skip font installation and font settings. |
@@ -240,18 +263,51 @@ Right-click the clock, choose Configure, enable a custom date format and use som
 
 Enable the User Themes extension before the GNOME Shell theme can be applied.
 
+### Fastfetch
+
+The repository includes a Fastfetch configuration under `fastfetch/`.
+
+It contains:
+
+- `config.jsonc` — Stark Mint Fastfetch configuration.
+- `logo.txt` — Custom ASCII logo.
+
+Install Fastfetch separately, then copy the supplied configuration and logo into the appropriate Fastfetch configuration directory.
+
+The configuration is optional and does not affect the desktop theme installation.
+
+### Terminal and Bash
+
+Terminal colours and the Bash prompt are optional manual customisations.
+
+The intended colour assignments are:
+
+| Element | Colour |
+| --- | --- |
+| Background | Graphite `#18191D` |
+| Default foreground | Bone `#EBE8E2` |
+| Username | Gold `#D6A84E` |
+| Hostname | Silver `#A5A9B2` |
+| Working directory | Cyan `#55DEE0` |
+| Prompt symbol | Stark Red `#B3272D` |
+
+Configure the terminal background and foreground through your terminal emulator's profile settings. The Bash prompt can be configured separately in `~/.bashrc`.
+
+These changes are not installed or modified by the Stark Mint theme installer.
+
 ---
 
 ## Project layout
 
 | Path | Contents |
-|---|---|
+| --- | --- |
 | `Stark-Mint/` | Main theme: GTK 2, GTK 3, GTK 4, Cinnamon, GNOME Shell, Metacity, Xfwm, Plank |
 | `Stark-Mint-hdpi/` | HiDPI Xfwm window decorations |
 | `Stark-Mint-xhdpi/` | Extra-HiDPI Xfwm window decorations |
 | `fonts/` | Bundled Barlow and JetBrains Mono fonts and their licences |
 | `preview/` | Screenshots and the design reference sheet |
 | `install.sh` | Installer and uninstaller |
+| `fastfetch/` | Fastfetch configuration and custom ASCII logo |
 
 ---
 
@@ -280,7 +336,7 @@ before running the installer, and it will be installed and applied like any othe
 `Stark-Mint/index.theme` points at two themes that Stark Mint does **not** ship:
 
 | Theme | Type |
-|---|---|
+| --- | --- |
 | `Tela-circle-Dark` | Icon theme |
 | `Everforest-cursors` | Cursor theme |
 
@@ -297,7 +353,7 @@ Stark Mint primarily targets Linux Mint Cinnamon.
 The table below separates what has been *checked in the files* from what has been *tested on a running desktop*. Please do not read a checked entry as a tested one.
 
 | Component | Status |
-|---|---|
+| --- | --- |
 | GTK 2 | Included; runtime behaviour not yet verified |
 | GTK 3 | Loads under the GTK 3.24 parser with no new errors |
 | GTK 4 | Parser checked; visual testing still needed |
@@ -325,6 +381,7 @@ If you run Stark Mint on a desktop that is not listed as tested, a compatibility
 Fixes and detailed notes are in [CHANGELOG.md](CHANGELOG.md).
 
 ---
+
 ### Flatpak Application Support
 
 Flatpak applications run in a sandbox and may not automatically have access to user-installed GTK themes.
@@ -343,7 +400,7 @@ To apply Stark Mint to Flatpak applications:
 
 5. Restart the affected application.
 
-**Note:** Some applications, particularly those using libadwaita, may not support complete GTK theme customisation. Appearance can vary between applications.
+**Note:** Some applications, particularly those using libadwaita, may not support complete GTK theme customisation. Appearance can vary between applications
 ---
 
 ## Planned work
@@ -393,7 +450,9 @@ Please read those notices before you redistribute this theme or any part of it.
 ---
 
 ---
-##Some Proofs
+
+## Some Proofs
+
 <img width="3019" height="1667" alt="work2" src="https://github.com/user-attachments/assets/29a082a6-b16d-427a-b5c2-5edf036d5248" />
 <img width="2677" height="1920" alt="work1" src="https://github.com/user-attachments/assets/11d072ac-fd0e-4d30-9ed6-a5ff35316612" />
 <img width="3072" height="1920" alt="work" src="https://github.com/user-attachments/assets/3faaf37f-cd0c-440a-9380-c05335fd36ae" />

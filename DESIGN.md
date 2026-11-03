@@ -25,7 +25,7 @@ It should feel:
 - Readable and consistent before it is decorative.
 - Recognisably Stark Mint across every component.
 
-The identity is a dark graphite foundation with exactly two accent families: Stark Red and Metallic Gold.
+The desktop theme uses a dark graphite foundation with exactly two accent families: Stark Red and Metallic Gold. Supporting tools may use limited additional colours where they serve a separate, clearly defined purpose.
 
 Stark Mint is built on `Everforest-Green-Dark` from Everforest-GTK-Theme, modified and extended to carry its own identity.
 
@@ -38,7 +38,7 @@ Stark Mint is built on `Everforest-Green-Dark` from Everforest-GTK-Theme, modifi
 These values are the ones actually used in the theme files. They match `preview/design-reference.png` and the table in `README.md`.
 
 | Name | Hex | Role |
-|---|---|---|
+| --- | --- | --- |
 | Forge | `#0E0F11` | Deepest background: entries, rails, wells |
 | Graphite | `#18191D` | Main background: views, panels |
 | Surface | `#1F2126` | Raised surfaces: windows, cards |
@@ -54,7 +54,7 @@ These values are the ones actually used in the theme files. They match `preview/
 Lighter and darker shades are used for interaction states and hierarchy. They belong to the two existing accent families and do not count as new accents.
 
 | Name | Hex | Use |
-|---|---|---|
+| --- | --- | --- |
 | Light Gold | `#E5BA63` | Gold hover, raised gold surfaces |
 | Deep Gold | `#C4963F` | Gold pressed, visited links |
 | Light Red | `#E05A60` | Red text on dark backgrounds, where solid red would be too dark to read |
@@ -115,6 +115,18 @@ It covers:
 - Primary and secondary text.
 - Disabled elements.
 
+### Arc Reactor Cyan — supporting micro-accent
+
+Arc Reactor Cyan (`#55DEE0`) is reserved for limited use outside the core desktop theme.
+
+It may appear in supporting tools such as Fastfetch and terminal customisation, where it provides a small reactor-inspired detail.
+
+Its use is deliberately restrained.
+
+Cyan must not become a third desktop theme accent. It must not replace gold for normal interaction or red for identity, errors and destructive actions.
+
+Avoid large cyan surfaces, excessive glow and unnecessary decoration.
+
 If you removed every accent colour, the theme should still be a usable, coherent dark desktop.
 
 ---
@@ -133,6 +145,9 @@ These must never become theme accents:
 - Purple
 - Any other competing accent family
 
+**Supporting-tool exception:** Arc Reactor Cyan (`#55DEE0`) may be used as a restrained micro-accent in supporting tools such as Fastfetch and terminal customisation. This exception does not apply to GTK, Cinnamon, window decorations or other desktop theme styling.
+
+The restriction on competing accent families remains unchanged.
 This applies to theme styling. Two things are **not** covered by it:
 
 1. **Third-party application icons.** Their own colours may stay. A recognisable icon is more useful than a uniform palette. Do not recolour every application icon red or gold.
@@ -158,7 +173,7 @@ Avoid:
 Stark Mint uses three families, bundled under `fonts/`.
 
 | Family | Role |
-|---|---|
+| --- | --- |
 | Barlow | Interface text, menus, labels, body copy |
 | Barlow Semi Condensed SemiBold | Title bars, section headings, menu titles |
 | JetBrains Mono | Terminals, file sizes, timestamps, clock |
@@ -179,7 +194,7 @@ Principles:
 Every interactive element needs four distinguishable states. Missing or ambiguous states are the most common bug in a theme.
 
 | State | Treatment |
-|---|---|
+| --- | --- |
 | Normal | Neutral surface, neutral text, no accent |
 | Hover | A clear but quiet change — a lighter surface, or gold where the element is a primary action |
 | Focus | Gold. Keyboard focus must always be visible, including on elements reached only by Tab |
@@ -230,7 +245,7 @@ Stark Mint ships Metacity/Muffin frames, Xfwm decorations with HiDPI variants, a
 ### Current implemented behaviour
 
 | Control | Normal | Hover | Pressed |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Close (CSD header bar) | Dark red well, Light Red glyph | Solid Stark Red, white glyph | — |
 | Close (Metacity frame) | Stark Red on a dark red field | Error Red | Deep Red |
 | Minimize, maximize (CSD) | Neutral translucent bone | Neutral bone tint | Neutral, slightly stronger |
@@ -241,7 +256,7 @@ Stark Mint ships Metacity/Muffin frames, Xfwm decorations with HiDPI variants, a
 The agreed target is:
 
 | Control | Normal | Hover |
-|---|---|---|
+| --- | --- | --- |
 | Close | Stark Red | **Stark Red** — stays red |
 | Minimize | Stark Red | **Metallic Gold** |
 | Maximize | Stark Red | **Metallic Gold** |
@@ -318,6 +333,8 @@ These are how the identity gets built, and they are open:
 - Adding icons.
 - Styling for an individual application, kept optional and modular.
 - Installer, packaging, documentation and screenshots.
+- Optional supporting-tool configurations, provided they do not change the core desktop theme identity.
+- Fastfetch configuration and terminal customisation that follow the established colour responsibilities.
 
 A good rule of thumb: if your change could be described as *"Stark Mint now does this correctly"*, it is implementation. If it would be described as *"Stark Mint now looks different"*, it is identity.
 
