@@ -1,0 +1,95 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+    "logo": {
+        "type": "auto"
+    },
+    "display": {
+        "separator": "  ",
+        "color": {
+            "keys": "31"
+        }
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[38;2;179;39;45m//\u001b[0m\u001b[38;2;214;168;78m/\u001b[0m \u001b[38;2;214;168;78mSYSTEM\u001b[0m \u001b[38;2;214;168;78m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m"
+        },
+        {
+            "type": "os",
+            "key": "  󰍹  OS      ",
+            "keyColor": "red"
+        },
+        {
+            "type": "host",
+            "key": "  󰌢  Host    ",
+            "keyColor": "red"
+        },
+        {
+            "type": "kernel",
+            "key": "    Kernel  ",
+            "keyColor": "red"
+        },
+        {
+            "type": "uptime",
+            "key": "  󰅐  Uptime  ",
+            "keyColor": "red"
+        },
+        {
+            "type": "packages",
+            "key": "  󰏖  Packages",
+            "keyColor": "red"
+        },
+        {
+            "type": "shell",
+            "key": "  󰞷  Shell   ",
+            "keyColor": "red"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[38;2;179;39;45m//\u001b[0m\u001b[38;2;214;168;78m/\u001b[0m \u001b[38;2;214;168;78mHARDWARE\u001b[0m \u001b[38;2;214;168;78m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m"
+        },
+        {
+            "type": "cpu",
+            "key": "  󰍛  CPU     ",
+            "keyColor": "red"
+        },
+        {
+            "type": "gpu",
+            "key": "  󰢮  GPU     ",
+            "keyColor": "red"
+        },
+        {
+            "type": "memory",
+            "key": "  󰍛  Memory  ",
+            "keyColor": "red"
+        },
+        {
+            "type": "swap",
+            "key": "  󰓡  Swap    ",
+            "keyColor": "red"
+        },
+        {
+            "type": "disk",
+            "key": "  󰋊  Disk    ",
+            "keyColor": "red"
+        },
+        {
+            "type": "battery",
+            "key": "  󰁹  Battery ",
+            "keyColor": "red"
+        },
+        {
+            "type": "poweradapter",
+            "key": "  󰚥  Adapter ",
+            "keyColor": "red"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "    \u001b[38;2;85;222;224m● System Online\u001b[0m"
+        },
+        "break"
+    ]
+}
