@@ -1,6 +1,6 @@
 # Stark Mint
 
-**Forged in graphite. Defined by red and gold.**
+**A quiet graphite workspace with purposeful gold, red and cyan accents. Industrial in appearance, minimal in everyday use.**
 
 Stark Mint is an open-source desktop theme inspired by the Iron Man Mark III armour and the Stark Industries aesthetic.
 
