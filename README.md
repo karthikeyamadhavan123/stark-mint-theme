@@ -8,7 +8,7 @@ It is built on the `Everforest-Green-Dark` variant of [Everforest-GTK-Theme](htt
 
 The project targets Linux Mint Cinnamon first, with generic styling for other GTK desktops.
 
-**Current version:** 0.1.0
+**Current version:** 0.2.0
 
 ---
 
@@ -58,9 +58,9 @@ A screenshot of the GTK widget factory running under Stark Mint. It shows button
 
 ### Design reference
 
-![Stark Mint 1.2.0 design reference](preview/design-reference.png)
+![Stark Mint 0.2.0 design reference](preview/design-reference.png)
 
-The 1.2.0 design reference sheet. It shows the intended Cinnamon panel, menu and file manager layout, GTK control states, notifications, and the full colour and typography system.
+The 0.2.0 design reference sheet. It shows the intended Cinnamon panel, menu and file manager layout, GTK control states, notifications, and the full colour and typography system.
 
 This sheet is a design target, not a screenshot of a running desktop. Where it differs from the shipped theme, the shipped theme is the current state of the project.
 

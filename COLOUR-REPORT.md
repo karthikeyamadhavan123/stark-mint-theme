@@ -1,4 +1,4 @@
-# Stark Mint 1.2.0 — Colour Report
+# Stark Mint 0.2.0 — Colour Report
 
 **Result:** the core desktop theme contains no cyan, teal or blue accent styling. This report audits the GTK, Cinnamon, GNOME Shell, window decoration and other theme assets separately from optional supporting-tool configurations.
 
@@ -7,7 +7,7 @@ Arc Reactor Cyan (`#55DEE0`) is reserved for limited use in Fastfetch and termin
 Blue values remain only in named colour lists that no theme rule uses (section 4).
 
 > This report replaces an earlier version that described changes before they were made. Every
-> number below comes from the final 1.2.0 files.
+> number below comes from the final 0.2.0 files.
 
 Accents: **Metallic Gold `#D6A84E`** (plus `#E5BA63` light, `#C4963F` deep) and **Stark Red
 `#B3272D`** (plus the theme's existing `#C93037`, `#E05A60`, `#8E1F24`). Neutrals: forge `#0E0F11`,
@@ -140,7 +140,7 @@ Cyan must remain a supporting-tool micro-accent and must not become a third desk
 
 ## 9. What is left, and why
 
-1. **`preview/design-reference.png`** — regenerated for 1.2.0. The earlier mock-up carried an
+1. **`preview/design-reference.png`** — regenerated for 0.2.0. The earlier mock-up carried an
    "Arc Cyan #7CD6E3" swatch; the current sheet does not. A full pixel scan of all 1,590,400
    pixels found no cyan, turquoise, teal, blue or purple. Its palette swatches match the theme
    files exactly: Forge `#0E0F11`, Graphite `#18191D`, Surface `#1F2126`, Charcoal `#26282E`,

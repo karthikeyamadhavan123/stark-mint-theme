@@ -91,7 +91,7 @@ These were created for Stark Mint and are not derived from upstream:
 |---|---|
 | `install.sh` | Installer and uninstaller |
 | `preview/gtk3-widgets.png` | Screenshot of the GTK widget factory running under Stark Mint |
-| `preview/design-reference.png` | The 1.2.0 Stark Mint design reference sheet |
+| `preview/design-reference.png` | The 0.2.0 Stark Mint design reference sheet |
 | `README.md`, `DESIGN.md`, `CONTRIBUTING.md`, `CREDITS.md`, `CHANGELOG.md`, `COLOUR-REPORT.md` | Project documentation |
 | `wallpaper/stark-mint-wallpaper.png` | Stark Mint wallpaper — distributed separately, see section 7 |
 

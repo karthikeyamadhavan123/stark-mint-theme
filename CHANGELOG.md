@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.0 — colour system correction (November 2026)
+## 0.2.0 — colour system correction (November 2026)
 
 Cyan, teal and blue accents are removed. Stark Mint now has two accent families,
 **Metallic Gold** `#D6A84E` and **Stark Red** `#B3272D`, plus the existing neutrals.
@@ -13,7 +13,7 @@ or removed in any CSS, rc or XML file (only values on existing lines changed).
 > report comes from the final files.
 
 Each old colour was given gold, red or a neutral **by what the element does**. Line numbers are
-the same in 1.1.0 and 1.2.0. `gtk.css` and `gtk-dark.css` are identical and got the same edits.
+the same in 0.1.0 and 0.2.0. `gtk.css` and `gtk-dark.css` are identical and got the same edits.
 
 | Old | New | Used for |
 |---|---|---|
@@ -102,12 +102,12 @@ the same in 1.1.0 and 1.2.0. `gtk.css` and `gtk-dark.css` are identical and got 
 - `wallpaper/stark-mint-wallpaper.png`: teal triangle → faint Stark red (same strength as before);
   the steel-blue tint in the lower-left glow and the blue text fringes → graphite (colour strength capped at the
   graphite level, brightness unchanged). Size, layout and gold ring unchanged.
-- `preview/gtk3-widgets.png`: re-taken with the 1.2.0 theme (`gtk3-widget-factory`, virtual display).
+- `preview/gtk3-widgets.png`: re-taken with the 0.2.0 theme (`gtk3-widget-factory`, virtual display).
 
 ### Metadata and docs
 
 - `index.theme`: description no longer says "arc pulse".
-- `install.sh`: `VERSION` 1.1.0 → 1.2.0 (no other change).
+- `install.sh`: `VERSION` 0.1.0 → 0.2.0 (no other change).
 - `README.md`: version, new colour table (replaces "cyan for links and success"), note that the mock-up is historical.
 - `COLOUR-REPORT.md`: rewritten with the real search results.
 
