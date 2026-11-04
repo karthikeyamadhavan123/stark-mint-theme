@@ -1,100 +1,77 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
     "logo": {
-    "type": "file",
-    "source": "~/.config/fastfetch/logo.txt",
-    "padding": {
-        "left": 2,
-        "right": 4
-    }
-  },
+        "type": "file",
+        "source": "~/.config/fastfetch/logo.txt",
+        "padding": {
+            "left": 2,
+            "right": 4
+        }
+    },
     "display": {
         "separator": "  ",
         "color": {
-            "keys": "31"
+            "keys": "38;2;179;39;45"
         }
     },
     "modules": [
         "break",
         {
             "type": "custom",
-           "format": "\u001b[38;2;179;39;45m╱╱\u001b[0m\u001b[38;2;214;168;78m╱\u001b[0m \u001b[38;2;214;168;78mSYSTEM\u001b[0m \u001b[38;2;214;168;78m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m"		
+            "format": "\u001b[38;2;179;39;45m█ █\u001b[0m \u001b[38;2;214;168;78m█\u001b[0m  \u001b[38;2;214;168;78;1mSYSTEM\u001b[0m \u001b[38;2;214;168;78m───────────────────────────────────\u001b[0m"
         },
+        "break",
         {
             "type": "os",
-            "key": "  󰍹  OS      ",
-            "keyColor": "red"
+            "key": "  󰍹  OS:"
         },
         {
             "type": "host",
-            "key": "  󰌢  Host    ",
-            "keyColor": "red"
+            "key": "  󰌢  Host:"
         },
         {
             "type": "kernel",
-            "key": "    Kernel  ",
-            "keyColor": "red"
+            "key": "  ⚙  Kernel:"
         },
         {
             "type": "uptime",
-            "key": "  󰅐  Uptime  ",
-            "keyColor": "red"
+            "key": "  󰅐  Uptime:"
         },
         {
             "type": "packages",
-            "key": "  󰏖  Packages",
-            "keyColor": "red"
+            "key": "  󰏖  Packages:"
         },
         {
             "type": "shell",
-            "key": "  󰞷  Shell   ",
-            "keyColor": "red"
+            "key": "  ❯  Shell:"
         },
         "break",
         {
             "type": "custom",
-            "format": "\u001b[38;2;179;39;45m╱╱\u001b[0m\u001b[38;2;214;168;78m╱\u001b[0m \u001b[38;2;214;168;78mHARDWARE\u001b[0m \u001b[38;2;214;168;78m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m"
+            "format": "\u001b[38;2;179;39;45m█ █\u001b[0m \u001b[38;2;214;168;78m█\u001b[0m  \u001b[38;2;214;168;78;1mHARDWARE\u001b[0m \u001b[38;2;214;168;78m─────────────────────────────────\u001b[0m"
         },
+        "break",
         {
             "type": "cpu",
-            "key": "  󰍛  CPU     ",
-            "keyColor": "red"
+            "key": "  󰍛  CPU:"
         },
         {
             "type": "gpu",
-            "key": "  󰢮  GPU     ",
-            "keyColor": "red"
+            "key": "  󰢮  GPU:"
         },
         {
             "type": "memory",
-            "key": "  󰍛  Memory  ",
-            "keyColor": "red"
+            "key": "  󰍛  Memory:"
         },
         {
             "type": "swap",
-            "key": "  󰓡  Swap    ",
-            "keyColor": "red"
+            "key": "  󰓡  Swap:"
         },
         {
             "type": "disk",
-            "key": "  󰋊  Disk    ",
-            "keyColor": "red"
-        },
-        {
-            "type": "battery",
-            "key": "  󰁹  Battery ",
-            "keyColor": "red"
-        },
-        {
-            "type": "poweradapter",
-            "key": "  󰚥  Adapter ",
-            "keyColor": "red"
+            "key": "  󰋊  Disk:"
         },
         "break",
-        {
-            "type": "custom",
-            "format": "    \u001b[38;2;85;222;224m● System Online\u001b[0m"
-        },
         "break"
     ]
 }
