@@ -122,7 +122,7 @@ the same in 0.1.0 and 0.2.0. `gtk.css` and `gtk-dark.css` are identical and got 
 - Green-grey and olive leftovers from Everforest that are not cyan, teal or blue (disabled slider
   knobs `#9da9a0`, a few edge pixels in GTK 2 and `-dark` slider PNGs). See `COLOUR-REPORT.md`.
 
-## 1.1.0 — technical correction release (November 2026)
+## 0.1.0 — technical correction release (November 2026)
 
 No redesign. Colours, fonts and layout stay the same except where a fix makes an
 intended style actually work (noted as "visible effect").
