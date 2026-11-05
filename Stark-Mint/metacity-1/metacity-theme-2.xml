@@ -198,7 +198,7 @@
 
 <draw_ops name="close_focused">
   <image filename="assets/close-bg.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0"/>
-  <image filename="assets/close.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#E05A60"/>
+  <image filename="assets/close.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#FFFFFF"/>
 </draw_ops>
 
 <draw_ops name="close_focused_prelight">
@@ -213,7 +213,7 @@
 
 <draw_ops name="close_unfocused">
   <image filename="assets/close-bg.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.5"/>
-  <image filename="assets/close.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.5" colorize="#E05A60"/>
+  <image filename="assets/close.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="0.5" colorize="#FFFFFF"/>
 </draw_ops>
 
 <draw_ops name="close_unfocused_prelight">
@@ -242,13 +242,13 @@
 </draw_ops>
 
 <draw_ops name="maximize_focused_prelight">
-  <include name="windows_maximize_icon_focused"/>
-  <include name="windows_button_focused_prelight"/>
+  <image filename="assets/maximize-bg-hover.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0"/>
+  <image filename="assets/maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#252525"/>
 </draw_ops>
 
 <draw_ops name="maximize_focused_pressed">
-  <include name="windows_maximize_icon_focused"/>
-  <include name="windows_button_focused_pressed"/>
+  <image filename="assets/maximize-bg-pressed.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0"/>
+  <image filename="assets/maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#252525"/>
 </draw_ops>
 
 <draw_ops name="maximize_unfocused">
@@ -257,13 +257,13 @@
 </draw_ops>
 
 <draw_ops name="maximize_unfocused_prelight">
-  <include name="windows_maximize_icon_unfocused"/>
-  <include name="windows_button_unfocused_prelight"/>
+  <image filename="assets/maximize-bg-hover.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0"/>
+  <image filename="assets/maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#252525"/>
 </draw_ops>
 
 <draw_ops name="maximize_unfocused_pressed">
-  <include name="windows_maximize_icon_unfocused"/>
-  <include name="windows_button_unfocused_pressed"/>
+  <image filename="assets/maximize-bg-pressed.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0"/>
+  <image filename="assets/maximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#252525"/>
 </draw_ops>
 
 <!-- unmaximize -->
@@ -282,13 +282,13 @@
 </draw_ops>
 
 <draw_ops name="unmaximize_focused_prelight">
-  <include name="windows_unmaximize_icon_focused"/>
-  <include name="windows_button_focused_prelight"/>
+  <image filename="assets/maximize-bg-hover.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0"/>
+  <image filename="assets/unmaximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#252525"/>
 </draw_ops>
 
 <draw_ops name="unmaximize_focused_pressed">
-  <include name="windows_unmaximize_icon_focused"/>
-  <include name="windows_button_focused_pressed"/>
+  <image filename="assets/maximize-bg-pressed.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0"/>
+  <image filename="assets/unmaximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#252525"/>
 </draw_ops>
 
 <draw_ops name="unmaximize_unfocused">
@@ -297,13 +297,13 @@
 </draw_ops>
 
 <draw_ops name="unmaximize_unfocused_prelight">
-  <include name="windows_unmaximize_icon_unfocused"/>
-  <include name="windows_button_unfocused_prelight"/>
+  <image filename="assets/maximize-bg-hover.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0"/>
+  <image filename="assets/unmaximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#252525"/>
 </draw_ops>
 
 <draw_ops name="unmaximize_unfocused_pressed">
-  <include name="windows_unmaximize_icon_unfocused"/>
-  <include name="windows_button_unfocused_pressed"/>
+  <image filename="assets/maximize-bg-pressed.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0"/>
+  <image filename="assets/unmaximize.svg" x="(width - object_width) / 2" y="(height - object_height) / 2" width="object_width" height="object_height" alpha="1.0" colorize="#252525"/>
 </draw_ops>
 
 <!-- minimize -->
