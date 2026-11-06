@@ -41,11 +41,15 @@ Please read:
 
 ### A. File and folder icons
 
-Stark Mint has **no icon theme of its own**. It currently points at `Tela-circle-Dark`, which users install separately. Building a Stark Mint icon set is probably the single most valuable thing anyone could contribute.
+Stark Mint includes an original Arc Reactor Cinnamon menu icon,
+but does not yet have a complete application and file icon theme.
+It currently relies on an external icon theme for the remaining icons.
+
+Building the Stark Mint icon set is an important area for contribution.
 
 Open areas:
 
-- A Stark Mint icon pack, started from folder icons.
+- Expand the existing Stark Mint artwork into a complete icon set, starting with essential application icons and folders.
 - Better folder icons.
 - Application and symbolic icons.
 - Consistency and quality across an existing set.
@@ -112,7 +116,7 @@ Often the most useful and most overlooked work:
 
 - Installation improvements.
 - Bug fixes.
-- **Compatibility testing.** Most components have been checked in the files but not confirmed on a real running desktop. If you run Stark Mint on a desktop that is not listed as tested in the README, saying so is a real contribution.
+- **Compatibility testing.** Some components have been tested on a real Linux Mint Cinnamon desktop, while other desktop environments and versions still need verification. Check the README before reporting compatibility.
 - **Screenshots.** The project needs real screenshots of a running Cinnamon desktop, the file manager and the application menu.
 - Documentation fixes.
 - Accessibility improvements.
@@ -191,24 +195,32 @@ All external contributions go through pull requests. **Direct commits and pushes
 
 1. **Fork** the repository on GitHub.
 2. **Clone** your fork locally:
+
    ```bash
    git clone https://github.com/YOUR-USERNAME/stark-mint-theme.git
    cd stark-mint-theme
    ```
+
 3. **Create a branch** for your work. One branch per feature or fix:
+
    ```bash
    git checkout -b fix/cinnamon-menu-contrast
    ```
+
 4. **Make focused changes.** Keep the pull request to one feature or one issue. If you notice something else while you are in there, note it in an issue rather than folding it into the same branch.
 5. **Test your changes** on a real desktop. See [Testing your change](#testing-your-change).
 6. **Commit** with a clear message that says what changed and why:
+
    ```bash
    git commit -m "cinnamon: raise menu selection contrast to 4.6:1"
    ```
+
 7. **Push** your branch to your fork:
+
    ```bash
    git push origin fix/cinnamon-menu-contrast
    ```
+
 8. **Open a Pull Request** against the `main` branch of the Stark Mint repository.
 9. **Describe** what changed, why it changed, and how you tested it.
 10. **Include screenshots** for anything visual.

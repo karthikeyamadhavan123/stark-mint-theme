@@ -68,6 +68,15 @@ Screenshots of a real Cinnamon desktop will be added as the project is tested on
 
 ---
 
+### Cinnamon desktop
+
+Stark Mint running on a real Linux Mint Cinnamon desktop.
+
+The screenshots demonstrate the custom Arc Reactor menu icon,
+updated window controls and the overall desktop appearance.
+
+![Stark Mint Cinnamon Desktop](preview/stark-mint-desktop.png)
+
 ### Fastfetch
 
 Stark Mint includes an optional Fastfetch configuration and logo artwork.
@@ -88,29 +97,29 @@ These are manual customisations and are not automatically applied by the theme i
 
 These values are taken from the theme files themselves.
 
-| Colour | Hex | Purpose |
-| --- | --- | --- |
-| Forge | `#0E0F11` | Deepest background: entries, rails |
-| Graphite | `#18191D` | Main background: views, panels |
-| Surface | `#1F2126` | Raised surfaces: windows, cards |
-| Charcoal | `#26282E` | Secondary surfaces: buttons |
-| Border | `#343842` | Separators and hairlines |
-| Silver | `#A5A9B2` | Secondary text and information |
-| Bone | `#EBE8E2` | Primary text |
-| Metallic Gold | `#D6A84E` | Focus, selection, primary actions, warnings |
-| Stark Red | `#B3272D` | Identity, errors, destructive actions, close |
+| Colour        | Hex       | Purpose                                      |
+| ------------- | --------- | -------------------------------------------- |
+| Forge         | `#0E0F11` | Deepest background: entries, rails           |
+| Graphite      | `#18191D` | Main background: views, panels               |
+| Surface       | `#1F2126` | Raised surfaces: windows, cards              |
+| Charcoal      | `#26282E` | Secondary surfaces: buttons                  |
+| Border        | `#343842` | Separators and hairlines                     |
+| Silver        | `#A5A9B2` | Secondary text and information               |
+| Bone          | `#EBE8E2` | Primary text                                 |
+| Metallic Gold | `#D6A84E` | Focus, selection, primary actions, warnings  |
+| Stark Red     | `#B3272D` | Identity, errors, destructive actions, close |
 
 ### Controlled variations
 
 These are shades of the two accent families. They are not extra accent colours.
 
-| Colour | Hex | Use |
-| --- | --- | --- |
-| Light Gold | `#E5BA63` | Hover and raised gold surfaces |
-| Deep Gold | `#C4963F` | Pressed gold, visited links |
-| Light Red | `#E05A60` | Red text on dark backgrounds |
-| Error Red | `#C93037` | Error state colour (`error_color`), close button hover in window frames |
-| Deep Red | `#8E1F24` | Pressed red |
+| Colour     | Hex       | Use                                                                     |
+| ---------- | --------- | ----------------------------------------------------------------------- |
+| Light Gold | `#E5BA63` | Hover and raised gold surfaces                                          |
+| Deep Gold  | `#C4963F` | Pressed gold, visited links                                             |
+| Light Red  | `#E05A60` | Red text on dark backgrounds                                            |
+| Error Red  | `#C93037` | Error state colour (`error_color`), close button hover in window frames |
+| Deep Red   | `#8E1F24` | Pressed red                                                             |
 
 [COLOUR-REPORT.md](COLOUR-REPORT.md) records the colour audit and the measured contrast ratios.
 
@@ -118,20 +127,21 @@ These are shades of the two accent families. They are not extra accent colours.
 
 ### Supporting micro-accent
 
-| Colour | Hex | Use |
-|---|---|---|
+| Colour           | Hex       | Use                                                                              |
+| ---------------- | --------- | -------------------------------------------------------------------------------- |
 | Arc Reactor Cyan | `#55DEE0` | Small reactor-inspired details and special active indicators in supporting tools |
+
 Cyan is not part of the desktop theme's accent system. It is reserved for limited use in Fastfetch and terminal customisation. It must not replace gold for interaction or red for identity and danger.
 
 ## Typography
 
 The theme references three font families, all bundled under `fonts/`.
 
-| Family | Used for |
-| --- | --- |
-| Barlow | General interface text, menus, labels, body copy |
-| Barlow Semi Condensed SemiBold | Title bars and headings |
-| JetBrains Mono | Terminals, file sizes, timestamps, clock |
+| Family                         | Used for                                         |
+| ------------------------------ | ------------------------------------------------ |
+| Barlow                         | General interface text, menus, labels, body copy |
+| Barlow Semi Condensed SemiBold | Title bars and headings                          |
+| JetBrains Mono                 | Terminals, file sizes, timestamps, clock         |
 
 When you let the installer change your desktop settings, it sets the interface font to Barlow 10, the title bar font to Barlow Semi Condensed SemiBold 10, and the monospace font to JetBrains Mono 10. You can change these afterwards without breaking the theme.
 
@@ -143,6 +153,8 @@ When you let the installer change your desktop settings, it sets the interface f
 - Cinnamon desktop styling: panel, menu, notifications, OSD, applets.
 - GNOME Shell styling.
 - Metacity/Muffin window decorations, in three frame variants.
+- Custom triangular Arc Reactor icon for the Cinnamon menu.
+- Refined Metacity/Muffin close and maximize/restore button styling.
 - Xfwm window decorations, with HiDPI and extra-HiDPI variants.
 - A Plank dock theme.
 - Bundled Barlow and JetBrains Mono fonts.
@@ -198,16 +210,16 @@ Nothing is deleted. Anything that would be replaced is first moved into a timest
 
 ### Installer options
 
-| Option | Description |
-| --- | --- |
-| `--apply` | Apply the theme, fonts and wallpaper without asking. |
-| `--no-apply` | Copy files only; never change desktop settings. |
-| `--no-fonts` | Skip font installation and font settings. |
-| `--no-wallpaper` | Skip wallpaper installation and settings. |
-| `--libadwaita` | Also apply GTK 4 styling through `~/.config/gtk-4.0`. |
-| `--uninstall` | Uninstall Stark Mint and optionally restore previous settings. |
-| `--yes`, `-y` | Answer yes to questions. Same as `--apply` when installing. |
-| `-h`, `--help` | Show the built-in help. |
+| Option           | Description                                                    |
+| ---------------- | -------------------------------------------------------------- |
+| `--apply`        | Apply the theme, fonts and wallpaper without asking.           |
+| `--no-apply`     | Copy files only; never change desktop settings.                |
+| `--no-fonts`     | Skip font installation and font settings.                      |
+| `--no-wallpaper` | Skip wallpaper installation and settings.                      |
+| `--libadwaita`   | Also apply GTK 4 styling through `~/.config/gtk-4.0`.          |
+| `--uninstall`    | Uninstall Stark Mint and optionally restore previous settings. |
+| `--yes`, `-y`    | Answer yes to questions. Same as `--apply` when installing.    |
+| `-h`, `--help`   | Show the built-in help.                                        |
 
 **Note on `--libadwaita`:** this writes into `~/.config/gtk-4.0`, which affects every GTK 4 and libadwaita application, not just one. Existing files there are backed up first.
 
@@ -282,14 +294,14 @@ Terminal colours and the Bash prompt are optional manual customisations.
 
 The intended colour assignments are:
 
-| Element | Colour |
-| --- | --- |
-| Background | Graphite `#18191D` |
-| Default foreground | Bone `#EBE8E2` |
-| Username | Gold `#D6A84E` |
-| Hostname | Silver `#A5A9B2` |
-| Working directory | Cyan `#55DEE0` |
-| Prompt symbol | Stark Red `#B3272D` |
+| Element            | Colour              |
+| ------------------ | ------------------- |
+| Background         | Graphite `#18191D`  |
+| Default foreground | Bone `#EBE8E2`      |
+| Username           | Gold `#D6A84E`      |
+| Hostname           | Silver `#A5A9B2`    |
+| Working directory  | Cyan `#55DEE0`      |
+| Prompt symbol      | Stark Red `#B3272D` |
 
 Configure the terminal background and foreground through your terminal emulator's profile settings. The Bash prompt can be configured separately in `~/.bashrc`.
 
@@ -299,15 +311,15 @@ These changes are not installed or modified by the Stark Mint theme installer.
 
 ## Project layout
 
-| Path | Contents |
-| --- | --- |
-| `Stark-Mint/` | Main theme: GTK 2, GTK 3, GTK 4, Cinnamon, GNOME Shell, Metacity, Xfwm, Plank |
-| `Stark-Mint-hdpi/` | HiDPI Xfwm window decorations |
-| `Stark-Mint-xhdpi/` | Extra-HiDPI Xfwm window decorations |
-| `fonts/` | Bundled Barlow and JetBrains Mono fonts and their licences |
-| `preview/` | Screenshots and the design reference sheet |
-| `install.sh` | Installer and uninstaller |
-| `fastfetch/` | Fastfetch configuration and custom ASCII logo |
+| Path                | Contents                                                                      |
+| ------------------- | ----------------------------------------------------------------------------- |
+| `Stark-Mint/`       | Main theme: GTK 2, GTK 3, GTK 4, Cinnamon, GNOME Shell, Metacity, Xfwm, Plank |
+| `Stark-Mint-hdpi/`  | HiDPI Xfwm window decorations                                                 |
+| `Stark-Mint-xhdpi/` | Extra-HiDPI Xfwm window decorations                                           |
+| `fonts/`            | Bundled Barlow and JetBrains Mono fonts and their licences                    |
+| `preview/`          | Screenshots and the design reference sheet                                    |
+| `install.sh`        | Installer and uninstaller                                                     |
+| `fastfetch/`        | Fastfetch configuration and custom ASCII logo                                 |
 
 ---
 
@@ -335,14 +347,21 @@ before running the installer, and it will be installed and applied like any othe
 
 `Stark-Mint/index.theme` points at two themes that Stark Mint does **not** ship:
 
-| Theme | Type |
-| --- | --- |
-| `Tela-circle-Dark` | Icon theme |
+| Theme                | Type         |
+| -------------------- | ------------ |
+| `Tela-circle-Dark`   | Icon theme   |
 | `Everforest-cursors` | Cursor theme |
 
 Install these separately if you want the exact icon and pointer appearance. Without them your desktop falls back to whatever icon and cursor themes you already have. Everything else in Stark Mint still works.
 
-Stark Mint does not yet have its own icon theme. Building one is an open area for contributors — see [CONTRIBUTING.md](CONTRIBUTING.md).
+Stark Mint does not yet provide a complete application and file icon theme.
+
+The project includes its own original Arc Reactor Cinnamon menu icon,
+but currently relies on an external icon theme for application, folder
+and system icons.
+
+Building a complete Stark Mint icon theme is planned future work.
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
@@ -350,20 +369,20 @@ Stark Mint does not yet have its own icon theme. Building one is an open area fo
 
 Stark Mint primarily targets Linux Mint Cinnamon.
 
-The table below separates what has been *checked in the files* from what has been *tested on a running desktop*. Please do not read a checked entry as a tested one.
+The table below separates what has been _checked in the files_ from what has been _tested on a running desktop_. Please do not read a checked entry as a tested one.
 
-| Component | Status |
-| --- | --- |
-| GTK 2 | Included; runtime behaviour not yet verified |
-| GTK 3 | Loads under the GTK 3.24 parser with no new errors |
-| GTK 4 | Parser checked; visual testing still needed |
-| Cinnamon 6.4 | Selectors checked against Cinnamon 6.4.13 source; runtime testing pending |
-| Cinnamon 6.6+ | Menu selectors checked against Cinnamon 6.6.4 class names; runtime testing pending |
-| Cinnamon 6.2 and older | Not verified |
-| GNOME Shell | Syntax checked; runtime testing pending |
-| Metacity/Muffin | XML and referenced assets checked; runtime testing pending |
-| Xfwm | Included; runtime testing pending |
-| Installer | Shell syntax and ShellCheck clean; exercised in an isolated user environment, not yet validated on a full desktop |
+| Component              | Status                                                                                                            |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| GTK 2                  | Included; runtime behaviour not yet verified                                                                      |
+| GTK 3                  | Loads under the GTK 3.24 parser with no new errors                                                                |
+| GTK 4                  | Parser checked; visual testing still needed                                                                       |
+| Cinnamon 6.4           | Selectors checked against Cinnamon 6.4.13 source; runtime testing pending                                         |
+| Cinnamon 6.6+          | Menu selectors checked against Cinnamon 6.6.4 class names; runtime testing pending                                |
+| Cinnamon 6.2 and older | Not verified                                                                                                      |
+| GNOME Shell            | Syntax checked; runtime testing pending                                                                           |
+| Metacity/Muffin        | XML and referenced assets checked; runtime testing pending                                                        |
+| Xfwm                   | Included; runtime testing pending                                                                                 |
+| Installer              | Shell syntax and ShellCheck clean; exercised in an isolated user environment, not yet validated on a full desktop |
 
 If you run Stark Mint on a desktop that is not listed as tested, a compatibility report is a genuinely useful contribution. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -375,8 +394,8 @@ If you run Stark Mint on a desktop that is not listed as tested, a compatibility
 - Some Cinnamon window-button settings are controlled by Cinnamon, not by the theme.
 - Some CSS properties inherited from upstream are ignored by particular desktop versions.
 - GTK 4 and libadwaita applications do not follow third-party themes consistently.
-- Stark Mint has no icon theme of its own yet and relies on an external one.
-- Most components have been checked in the files but not yet confirmed on a running desktop.
+- A complete Stark Mint application and file icon theme is not yet available; an external icon theme is still required.
+- Several components still need runtime testing across different desktop environments and versions.
 
 Fixes and detailed notes are in [CHANGELOG.md](CHANGELOG.md).
 
@@ -400,18 +419,18 @@ To apply Stark Mint to Flatpak applications:
 
 5. Restart the affected application.
 
-**Note:** Some applications, particularly those using libadwaita, may not support complete GTK theme customisation. Appearance can vary between applications
----
+## **Note:** Some applications, particularly those using libadwaita, may not support complete GTK theme customisation. Appearance can vary between applications
 
 ## Planned work
 
 These are intentions, not promises, and not yet implemented:
 
-- A Stark Mint icon theme, so the project stops depending on an external icon set.
-- Real desktop screenshots for Cinnamon, the file manager and the application menu.
+- A complete Stark Mint application and file icon set.
+- Additional Cinnamon menu and applet refinements.
 - Runtime testing across more Cinnamon, GNOME and Xfce versions.
 - Optional, modular styling for individual applications.
 - Further accessibility and contrast work.
+- Improvements to the installation and uninstallation process.
 
 ---
 

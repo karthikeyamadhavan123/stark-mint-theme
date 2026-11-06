@@ -2,6 +2,24 @@
 
 ## 0.2.0 — colour system correction (November 2026)
 
+## Unreleased
+
+### Added
+
+- Original triangular Arc Reactor Cinnamon menu icon.
+
+### Changed
+
+- Refined Metacity/Muffin close button styling.
+- Updated maximize/restore button hover styling.
+
+### Planned
+
+- Cinnamon logout button refinement.
+- Basic application icon set.
+- Installer improvements.
+- Documentation updates.
+
 Cyan, teal and blue accents are removed. Stark Mint now has two accent families,
 **Metallic Gold** `#D6A84E` and **Stark Red** `#B3272D`, plus the existing neutrals.
 No redesign: layouts, fonts, sizes and backgrounds are unchanged, and no lines were added
@@ -15,15 +33,15 @@ or removed in any CSS, rc or XML file (only values on existing lines changed).
 Each old colour was given gold, red or a neutral **by what the element does**. Line numbers are
 the same in 0.1.0 and 0.2.0. `gtk.css` and `gtk-dark.css` are identical and got the same edits.
 
-| Old | New | Used for |
-|---|---|---|
-| `#7CD6E3` cyan | `#D6A84E` gold | primary buttons, focus rings, links, success, progress, drag-and-drop, checkboxes |
-| `#A6E6EF` light cyan | `#C4963F` (visited links) / `#E5BA63` (link hover) | links |
-| `#75B3D2`, `#5CBCCB` | `#C4963F` | pressed primary button, pressed link |
-| `#317CA5` blue | `#D6A84E` | GTK 4 dialog primary buttons |
-| bone text on cyan/blue buttons | `rgba(31, 33, 38, 0.87)` | the theme's existing text-on-gold colour (`accent_fg_color`); contrast 1.36 → 5.73 |
-| cyan for "cold" / "night" | silver `#A5A9B2` | neutral information, not an action |
-| slate-blue greys | graphite greys of the same lightness | neutral |
+| Old                            | New                                                | Used for                                                                           |
+| ------------------------------ | -------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `#7CD6E3` cyan                 | `#D6A84E` gold                                     | primary buttons, focus rings, links, success, progress, drag-and-drop, checkboxes  |
+| `#A6E6EF` light cyan           | `#C4963F` (visited links) / `#E5BA63` (link hover) | links                                                                              |
+| `#75B3D2`, `#5CBCCB`           | `#C4963F`                                          | pressed primary button, pressed link                                               |
+| `#317CA5` blue                 | `#D6A84E`                                          | GTK 4 dialog primary buttons                                                       |
+| bone text on cyan/blue buttons | `rgba(31, 33, 38, 0.87)`                           | the theme's existing text-on-gold colour (`accent_fg_color`); contrast 1.36 → 5.73 |
+| cyan for "cold" / "night"      | silver `#A5A9B2`                                   | neutral information, not an action                                                 |
+| slate-blue greys               | graphite greys of the same lightness               | neutral                                                                            |
 
 ### GTK 3 — `Stark-Mint/gtk-3.0/gtk.css`, `gtk-dark.css` (20 lines each)
 
@@ -31,7 +49,7 @@ the same in 0.1.0 and 0.2.0. `gtk.css` and `gtk-dark.css` are identical and got 
 - 816, 824, 828, 843: primary-button glow, focus ring, flat-checked → gold. 820: pressed `#75b3d2` → `#c4963f`. 833: flat primary text → gold.
 - 939, 947: links → gold. 943, 951: visited → `#c4963f`.
 - 3094: `levelbar block.full` → gold. 3612: message-dialog primary text → gold.
-- 3912: info bar text gold → bone (information is neutral). Info-bar *button* text (3921) stays gold.
+- 3912: info bar text gold → bone (information is neutral). Info-bar _button_ text (3921) stays gold.
 - 6548: Firefox checkbox hover `#56635f` (teal-grey) → graphite `#5d6168`, same lightness.
 - 8510: `success_color` → gold.
 - 8592, 8785, 8789 (Stark override block): "arc #7CD6E3" removed from the token comment; "Links = arc pulse" → gold.
@@ -130,7 +148,7 @@ intended style actually work (noted as "visible effect").
 ### Cinnamon — `Stark-Mint/cinnamon/`
 
 - `cinnamon.css` lines 5, 11, 16, 23: `15ptpt` / `13ptpt` / `11ptpt` / `9ptpt` → `15pt` / `13pt` / `11pt` / `9pt`.
-  Inherited from upstream. *Visible effect:* these sizes for dialog titles,
+  Inherited from upstream. _Visible effect:_ these sizes for dialog titles,
   OSDs and prompt labels were being ignored before and now apply.
 - `cinnamon.css` (Stark override block, was line 2898): added `.menu-category-button:hover`.
   Cinnamon 6.4 marks hovered menu categories with `:hover`. The old
@@ -143,7 +161,7 @@ intended style actually work (noted as "visible effect").
   colours as the existing menu rules. Cinnamon 6.4 and older ignore these rules.
 - `assets/close-hover.svg`: leftover Everforest pink `#e67e80` / `#ff7a80` → Stark red `#e05a60`.
 - `assets/close-active.svg`: leftover Everforest orange `#f57d26` / `#d8354a` → Stark red `#8e1f24`.
-  *Visible effect:* the expo/overview window-close button no longer turns pink or orange.
+  _Visible effect:_ the expo/overview window-close button no longer turns pink or orange.
 
 ### Window frames — `Stark-Mint/metacity-1/`
 
@@ -155,7 +173,7 @@ intended style actually work (noted as "visible effect").
 - `gtk.css` and `gtk-dark.css` lines 2824–2973 (12 lines, 24 references):
   slider tick-mark images pointed to `assets/scale-*-dark*.svg`, which do not exist.
   They now point to the `.png` files that do exist. Inherited from upstream.
-  *Visible effect:* tick marks on marked sliders now show.
+  _Visible effect:_ tick marks on marked sliders now show.
 - `gtk.css` and `gtk-dark.css` line 4267: `assets/cursor-handle-symbolic.svg` →
   `assets/scalable/cursor-handle-symbolic.svg`, the actual file location.
 - Leftover Everforest colours the first recolour missed:

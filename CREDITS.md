@@ -10,12 +10,12 @@ Some entries are marked **Needs maintainer verification**. Those are genuinely u
 
 ## 1. Upstream theme — most of `Stark-Mint/`
 
-| | |
-|---|---|
-| Project | **Everforest-GTK-Theme** by Fausto-Korpsvart |
-| Repository | https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme |
-| Variant used | `Everforest-Green-Dark`, plus the `-hdpi` and `-xhdpi` Xfwm folders |
-| Licence | **GNU General Public License version 3** |
+|                |                                                                                                     |
+| -------------- | --------------------------------------------------------------------------------------------------- |
+| Project        | **Everforest-GTK-Theme** by Fausto-Korpsvart                                                        |
+| Repository     | <https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme>                                            |
+| Variant used   | `Everforest-Green-Dark`, plus the `-hdpi` and `-xhdpi` Xfwm folders                                 |
+| Licence        | **GNU General Public License version 3**                                                            |
 | Licence source | The `LICENSE` file in the upstream repository, and the GPL-3.0 licence shown on the repository page |
 
 The upstream project credits, in its own README:
@@ -41,10 +41,10 @@ Do not remove these lines. They are the upstream authors' attribution and they a
 
 These notices are present in the shipped files and must stay there.
 
-| File | Notice | Licence |
-|---|---|---|
-| `Stark-Mint/gnome-shell/gnome-shell.css` | Copyright 2009, 2015 Red Hat, Inc. Portions adapted from Mx's `data/style/default.css`, Copyright 2009 Intel Corporation. | **GNU LGPL 2.1** — stated in the file header |
-| `Stark-Mint/plank/dock.theme` | A comment at the top records that the file is based on Plank's default `dock.theme`, at `https://git.launchpad.net/plank/tree/data/themes/Default/dock.theme` | Plank is GPL-3.0 |
+| File                                     | Notice                                                                                                                                                        | Licence                                      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| `Stark-Mint/gnome-shell/gnome-shell.css` | Copyright 2009, 2015 Red Hat, Inc. Portions adapted from Mx's `data/style/default.css`, Copyright 2009 Intel Corporation.                                     | **GNU LGPL 2.1** — stated in the file header |
+| `Stark-Mint/plank/dock.theme`            | A comment at the top records that the file is based on Plank's default `dock.theme`, at `https://git.launchpad.net/plank/tree/data/themes/Default/dock.theme` | Plank is GPL-3.0                             |
 
 Note on the GNOME Shell stylesheet: its header states LGPL 2.1, not GPL-3.0. The root `LICENSE` does not override it. This is the clearest example of why the root licence cannot be treated as covering the whole repository.
 
@@ -54,11 +54,11 @@ Note on the GNOME Shell stylesheet: its header states LGPL 2.1, not GPL-3.0. The
 
 ## 3. Fonts — `fonts/`
 
-| Font | Licence | Licence file in this repository |
-|---|---|---|
-| Barlow | SIL Open Font License 1.1 | `fonts/OFL-Barlow.txt` |
-| Barlow Semi Condensed | SIL Open Font License 1.1 | `fonts/OFL-Barlow.txt` |
-| JetBrains Mono | SIL Open Font License 1.1 | `fonts/OFL-JetBrainsMono.txt` |
+| Font                  | Licence                   | Licence file in this repository |
+| --------------------- | ------------------------- | ------------------------------- |
+| Barlow                | SIL Open Font License 1.1 | `fonts/OFL-Barlow.txt`          |
+| Barlow Semi Condensed | SIL Open Font License 1.1 | `fonts/OFL-Barlow.txt`          |
+| JetBrains Mono        | SIL Open Font License 1.1 | `fonts/OFL-JetBrainsMono.txt`   |
 
 The fonts were downloaded unmodified from the `google/fonts` repository.
 
@@ -87,13 +87,14 @@ These are Stark Mint changes to upstream files. As modifications of a GPL-3.0 wo
 
 These were created for Stark Mint and are not derived from upstream:
 
-| File | What it is |
-|---|---|
-| `install.sh` | Installer and uninstaller |
-| `preview/gtk3-widgets.png` | Screenshot of the GTK widget factory running under Stark Mint |
-| `preview/design-reference.png` | The 0.2.0 Stark Mint design reference sheet |
-| `README.md`, `DESIGN.md`, `CONTRIBUTING.md`, `CREDITS.md`, `CHANGELOG.md`, `COLOUR-REPORT.md` | Project documentation |
-| `wallpaper/stark-mint-wallpaper.png` | Stark Mint wallpaper — distributed separately, see section 7 |
+| File                                                                                          | What it is                                                    |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `install.sh`                                                                                  | Installer and uninstaller                                     |
+| `preview/gtk3-widgets.png`                                                                    | Screenshot of the GTK widget factory running under Stark Mint |
+| `preview/design-reference.png`                                                                | The 0.2.0 Stark Mint design reference sheet                   |
+| `README.md`, `DESIGN.md`, `CONTRIBUTING.md`, `CREDITS.md`, `CHANGELOG.md`, `COLOUR-REPORT.md` | Project documentation                                         |
+| `wallpaper/stark-mint-wallpaper.png`                                                          | Stark Mint wallpaper — distributed separately, see section 7  |
+| `Stark-Mint/metacity-1/assets/icons/menu.svg`                                                 | Original triangular Arc Reactor menu icon artwork             |
 
 **Licence: GNU General Public License version 3.**
 
@@ -124,9 +125,9 @@ Note on `preview/gtk3-widgets.png`: it is a screenshot of GTK's own widget facto
 
 `Stark-Mint/index.theme` names two themes that are **not** included in this repository and are not redistributed by it:
 
-| Theme | Type | Setting |
-|---|---|---|
-| `Tela-circle-Dark` | Icon theme | `IconTheme=` |
+| Theme                | Type         | Setting        |
+| -------------------- | ------------ | -------------- |
+| `Tela-circle-Dark`   | Icon theme   | `IconTheme=`   |
 | `Everforest-cursors` | Cursor theme | `CursorTheme=` |
 
 Users install these separately. Stark Mint makes no licensing claim over either, and nothing in this repository redistributes them.
@@ -163,16 +164,16 @@ Modified for Stark Mint in November 2026. See `CHANGELOG.md` for the list of cha
 
 ## 9. Summary of what the root LICENSE covers
 
-| Part of the repository | Licence |
-|---|---|
-| Theme files derived from Everforest-GTK-Theme | GPL-3.0, via the root `LICENSE` |
-| Stark Mint's modifications to those files | GPL-3.0, as modifications of a GPL-3.0 work |
-| `Stark-Mint/gnome-shell/gnome-shell.css` | LGPL 2.1, per its own header |
-| `Stark-Mint/plank/dock.theme` | Based on Plank; GPL-3.0 |
-| Bundled fonts | SIL Open Font License 1.1, per `fonts/OFL-*.txt` |
-| `install.sh`, documentation, previews | GPL-3.0, by the maintainer's decision — see section 5 |
-| Wallpaper | GPL-3.0, but distributed separately — see section 7 |
-| `Tela-circle-Dark`, `Everforest-cursors` | Not bundled; not covered |
+| Part of the repository                        | Licence                                               |
+| --------------------------------------------- | ----------------------------------------------------- |
+| Theme files derived from Everforest-GTK-Theme | GPL-3.0, via the root `LICENSE`                       |
+| Stark Mint's modifications to those files     | GPL-3.0, as modifications of a GPL-3.0 work           |
+| `Stark-Mint/gnome-shell/gnome-shell.css`      | LGPL 2.1, per its own header                          |
+| `Stark-Mint/plank/dock.theme`                 | Based on Plank; GPL-3.0                               |
+| Bundled fonts                                 | SIL Open Font License 1.1, per `fonts/OFL-*.txt`      |
+| `install.sh`, documentation, previews         | GPL-3.0, by the maintainer's decision — see section 5 |
+| Wallpaper                                     | GPL-3.0, but distributed separately — see section 7   |
+| `Tela-circle-Dark`, `Everforest-cursors`      | Not bundled; not covered                              |
 
 The root `LICENSE` does **not** automatically cover every file in this repository.
 

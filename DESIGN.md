@@ -246,26 +246,18 @@ Stark Mint ships Metacity/Muffin frames, Xfwm decorations with HiDPI variants, a
 
 | Control | Normal | Hover | Pressed |
 | --- | --- | --- | --- |
-| Close (CSD header bar) | Dark red well, Light Red glyph | Solid Stark Red, white glyph | — |
-| Close (Metacity frame) | Stark Red on a dark red field | Error Red | Deep Red |
-| Minimize, maximize (CSD) | Neutral translucent bone | Neutral bone tint | Neutral, slightly stronger |
-| Minimize, maximize (Metacity) | Title colour at low opacity | Title colour, higher opacity | Title colour, higher still |
+| Close (Metacity frame) | Stark Red | Brighter red | Darker red |
+| Maximize/restore (Metacity frame) | Existing normal appearance | Metallic Gold background with Graphite glyph | Darker gold |
+| Minimize (Metacity frame) | Existing normal appearance | Existing behaviour | Existing behaviour |
 
-### Intended direction
+The close and maximize/restore controls have received their latest
+Stark Mint styling refinements. Minimize retains its existing styling.
 
-The agreed target is:
+### Remaining work
 
-| Control | Normal | Hover |
-| --- | --- | --- |
-| Close | Stark Red | **Stark Red** — stays red |
-| Minimize | Stark Red | **Metallic Gold** |
-| Maximize | Stark Red | **Metallic Gold** |
-
-Close keeps its red identity through every state. It is the one control where an accidental click costs the user work, so it should never share a hover colour with the two harmless controls next to it. Minimize and maximize move to gold, because gold is the theme's interaction colour and that is exactly what a hover is.
-
-**This is not implemented yet.** Minimize and maximize are currently neutral in both CSD and Metacity. Close already behaves correctly: it is red by default and deepens to Error Red or solid Stark Red on hover.
-
-So the open work is narrow — give minimize and maximize a red default and a gold hover. Leave close alone.
+- Refine the Cinnamon logout button.
+- Verify control consistency across CSD, Metacity/Muffin and Xfwm.
+- Test hover, pressed and inactive states across supported environments.
 
 A contributor is welcome to take it on. If you do:
 
@@ -356,8 +348,13 @@ Follow the same colour responsibilities. An application theme is Stark Mint appl
 
 ## 13. Icon design direction
 
-Stark Mint does not ship an icon theme yet. `index.theme` points at `Tela-circle-Dark`, which is not bundled. A Stark Mint icon set is one of the most valuable contributions available.
+Stark Mint does not yet ship a complete application and file icon theme.
+The project includes an original triangular Arc Reactor icon for the
+Cinnamon menu. The remaining application and file icons are planned
+future work.
 
+The Arc Reactor is original Stark Mint artwork, designed specifically
+for the project's visual identity.
 Direction for anyone taking it on:
 
 - Graphite, Silver and Bone carry the shapes. Red and gold are for accents and identity marks, not fills.
