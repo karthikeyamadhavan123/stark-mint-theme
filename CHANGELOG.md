@@ -1,24 +1,65 @@
 # Changelog
 
-## 0.2.0 — colour system correction (November 2026)
-
-## Unreleased
+## 0.3.0 — typography, window controls and documentation (November 2026)
 
 ### Added
 
 - Original triangular Arc Reactor Cinnamon menu icon.
+- Gold hover styling for the Metacity maximize and unmaximize buttons:
+  `maximize-bg-hover.svg` and `maximize-bg-pressed.svg`, applied to the
+  prelight and pressed states of `maximize_{focused,unfocused}` and
+  `unmaximize_{focused,unfocused}` in all three Metacity theme variants.
+- Matching `titlebutton` rules in `gtk-3.0/gtk.css`, `gtk-3.0/gtk-dark.css`,
+  `gtk-4.0/gtk.css` and `gtk-4.0/gtk-dark.css`, so client-side decorated
+  applications get the same close and maximize colours as server-side ones.
+- A Stark-palette Bash prompt in the README's Manual configuration section.
+- A link to [Stark Icons](https://github.com/karthikeyamadhavan123/Stark-Icons),
+  the companion icon theme.
 
 ### Changed
 
-- Refined Metacity/Muffin close button styling.
-- Updated maximize/restore button hover styling.
+- **Typography unified on JetBrains Mono.** Barlow and Barlow Semi Condensed
+  removed entirely. Hierarchy now comes from weight: 400 for interface text,
+  500 for selected labels, 700 for title bars, headings and the calendar month
+  and current-day labels. Every `font-family` declaration in `cinnamon.css`,
+  `gnome-shell.css` and the four GTK stylesheets was updated, along with the
+  font keys set by `install.sh`.
+- **Close button redesigned.** Solid Stark red with a white cross, replacing the
+  dark plate with a red outline. `#B3272D` at rest, `#C93037` on hover,
+  `#8E1F24` pressed. The three `close-bg*.svg` assets were rewritten as solid
+  fills with no stroke.
+- `fonts/` now contains JetBrains Mono only: the variable font plus the static
+  faces. `OFL-Barlow.txt` and all Barlow files removed.
+- `README.md`, `DESIGN.md` and `CREDITS.md` rewritten around the single font
+  family and the weight scale.
+
+### Fixed
+
+- A paragraph in the README was formatted as an `##` heading, so it appeared in
+  the document outline as a section. It is now a note.
+- The "Some Proofs" section used images hosted outside the repository. It now
+  uses the screenshots in `preview/`.
+- The summary line described the theme as having cyan accents, contradicting
+  the colour palette section, which states that cyan is not part of the desktop
+  accent system.
+
+### Known gaps
+
+- `fonts/` carries static faces for Light, Medium, SemiBold, ExtraBold and Thin
+  that register under their own family names and cannot be reached by
+  `font-weight`. Those weights come from the variable font. The statics are
+  harmless but redundant.
+- `32/actions` is declared in the icon theme's `index.theme` upstream but has
+  never existed. Inherited, not introduced here.
+
+## Unreleased
 
 ### Planned
 
 - Cinnamon logout button refinement.
-- Basic application icon set.
 - Installer improvements.
-- Documentation updates.
+
+## 0.2.0 — colour system correction (November 2026)
 
 Cyan, teal and blue accents are removed. Stark Mint now has two accent families,
 **Metallic Gold** `#D6A84E` and **Stark Red** `#B3272D`, plus the existing neutrals.

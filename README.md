@@ -1,6 +1,6 @@
 # Stark Mint
 
-**A quiet graphite workspace with purposeful gold, red and cyan accents. Industrial in appearance, minimal in everyday use.**
+**A quiet graphite workspace with purposeful gold and red accents. Industrial in appearance, minimal in everyday use.**
 
 Stark Mint is an open-source desktop theme inspired by the Iron Man Mark III armour and the Stark Industries aesthetic.
 
@@ -8,7 +8,7 @@ It is built on the `Everforest-Green-Dark` variant of [Everforest-GTK-Theme](htt
 
 The project targets Linux Mint Cinnamon first, with generic styling for other GTK desktops.
 
-**Current version:** 0.2.0
+**Current version:** 0.3.0
 
 ---
 
@@ -16,6 +16,7 @@ The project targets Linux Mint Cinnamon first, with generic styling for other GT
 
 - [Design philosophy](#design-philosophy)
 - [Preview](#preview)
+- [Matching icon theme](#matching-icon-theme)
 - [Colour palette](#colour-palette)
 - [Typography](#typography)
 - [What is implemented](#what-is-implemented)
@@ -93,6 +94,23 @@ These are manual customisations and are not automatically applied by the theme i
 
 ![Stark Mint terminal preview](preview/terminal.png)
 
+## Matching icon theme
+
+[Stark Icons](https://github.com/karthikeyamadhavan123/Stark-Icons) is the
+companion icon theme — same palette, same graphite-and-gold direction. It is an
+adaptation of Dracula Icons with six signature desktop icons redrawn in the
+Stark palette.
+
+```bash
+git clone https://github.com/karthikeyamadhavan123/Stark-Icons ~/.icons/Stark-Icons
+gtk-update-icon-cache -f ~/.icons/Stark-Icons
+```
+
+Then **Themes → Icons → Stark Icons**. Either theme works on its own, but they
+are built to be used together.
+
+---
+
 ## Colour palette
 
 These values are taken from the theme files themselves.
@@ -137,10 +155,10 @@ Cyan is not part of the desktop theme's accent system. It is reserved for limite
 
 The theme references a single font family, JetBrains Mono, bundled under `fonts/`. Hierarchy comes from weight and size rather than from a second or third family.
 
-| Weight                 | Used for                                                  |
-| ---------------------- | --------------------------------------------------------- |
-| JetBrains Mono Regular | General interface text, menus, labels, body copy          |
-| JetBrains Mono Medium  | Selected and active labels                                |
+| Weight                 | Used for                                                   |
+| ---------------------- | ---------------------------------------------------------- |
+| JetBrains Mono Regular | General interface text, menus, labels, body copy           |
+| JetBrains Mono Medium  | Selected and active labels                                 |
 | JetBrains Mono Bold    | Title bars, headings, calendar month and current-day label |
 
 When you let the installer change your desktop settings, it sets the interface font to JetBrains Mono 10, the title bar font to JetBrains Mono Bold 10, and the monospace font to JetBrains Mono 10. You can change these afterwards without breaking the theme.
@@ -303,7 +321,26 @@ The intended colour assignments are:
 | Working directory  | Cyan `#55DEE0`      |
 | Prompt symbol      | Stark Red `#B3272D` |
 
-Configure the terminal background and foreground through your terminal emulator's profile settings. The Bash prompt can be configured separately in `~/.bashrc`.
+Configure the terminal background and foreground through your terminal emulator's profile settings.
+
+For the prompt, add this line to the end of `~/.bashrc`:
+
+```bash
+PS1='\[\033[38;2;214;168;78m\]\u\[\033[38;2;165;169;178m\]@\h\[\033[0m\]:\[\033[38;2;85;222;224m\]\w\[\033[38;2;179;39;45m\]\$\[\033[0m\] '
+```
+
+Then reload with `source ~/.bashrc`, or open a new terminal.
+
+That gives a gold username, silver `@hostname`, cyan working directory and a
+Stark red prompt symbol, matching the table above. It uses 24-bit colour
+escapes, so the exact hex values come through on any terminal with truecolor
+support. Mint's default terminal has it.
+
+To go back to the Mint default, remove the line, or replace it with:
+
+```bash
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+```
 
 These changes are not installed or modified by the Stark Mint theme installer.
 
@@ -419,7 +456,9 @@ To apply Stark Mint to Flatpak applications:
 
 5. Restart the affected application.
 
-## **Note:** Some applications, particularly those using libadwaita, may not support complete GTK theme customisation. Appearance can vary between applications
+> **Note:** Some applications, particularly those using libadwaita, may not
+> support complete GTK theme customisation. Appearance can vary between
+> applications.
 
 ## Planned work
 
@@ -472,9 +511,13 @@ Please read those notices before you redistribute this theme or any part of it.
 
 ## Some Proofs
 
-<img width="3019" height="1667" alt="work2" src="https://github.com/user-attachments/assets/29a082a6-b16d-427a-b5c2-5edf036d5248" />
-<img width="2677" height="1920" alt="work1" src="https://github.com/user-attachments/assets/11d072ac-fd0e-4d30-9ed6-a5ff35316612" />
-<img width="3072" height="1920" alt="work" src="https://github.com/user-attachments/assets/3faaf37f-cd0c-440a-9380-c05335fd36ae" />
+Stark Mint and Stark Icons running together on Linux Mint Cinnamon.
+
+![Stark Mint desktop](preview/stark-mint-desktop.png)
+
+![Stark Mint menu](preview/menu.png)
+
+![Stark Mint terminal](preview/terminal.png)
 
 ---
 
