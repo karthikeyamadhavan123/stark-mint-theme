@@ -49,14 +49,6 @@ The goal is not simply another dark theme. It is a consistent visual identity th
 
 ---
 
-## Preview
-
-### GTK 3 widgets
-
-![Stark Mint GTK 3 widget preview](preview/gtk3-widgets.png)
-
-A screenshot of the GTK widget factory running under Stark Mint. It shows buttons, entries, switches, sliders, lists and selection and focus states.
-
 ### Design reference
 
 ![Stark Mint 0.2.0 design reference](preview/design-reference.png)
