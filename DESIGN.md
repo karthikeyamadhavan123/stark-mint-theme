@@ -170,19 +170,21 @@ Avoid:
 
 ## 5. Typography and readability
 
-Stark Mint uses three families, bundled under `fonts/`.
+Stark Mint uses one family, JetBrains Mono, bundled under `fonts/`. Hierarchy is carried by weight and size, not by swapping families.
 
-| Family | Role |
+| Weight | Role |
 | --- | --- |
-| Barlow | Interface text, menus, labels, body copy |
-| Barlow Semi Condensed SemiBold | Title bars, section headings, menu titles |
-| JetBrains Mono | Terminals, file sizes, timestamps, clock |
+| JetBrains Mono Regular (400) | Interface text, menus, labels, body copy |
+| JetBrains Mono Medium (500) | Selected and active labels |
+| JetBrains Mono Bold (700) | Title bars, section headings, menu titles, calendar month and current-day label |
+| JetBrains Mono (any weight) | Terminals, file sizes, timestamps, clock |
 
 Principles:
 
-- Barlow is the default. Do not introduce a fourth family for a single component.
-- Use weight and size for hierarchy before you reach for colour.
-- Barlow Semi Condensed is for chrome, not body text. It is narrower and tires the eye over long passages.
+- JetBrains Mono Regular is the default. Do not introduce a second family for a single component.
+- Use weight and size for hierarchy before you reach for colour. With one family this is the only structural lever, so use it deliberately: one step of weight, or one step of size, not both at once.
+- Bold is for chrome, not body text. A monospace bold is heavy and tires the eye over long passages.
+- The family is monospaced throughout, so columns of data already line up. Do not reach for a weight change to mark data that alignment alone makes clear.
 - Monospace is for data that lines up in columns, not for emphasis.
 - Never put text below the readable contrast ratios in section 10 just to get a visual effect.
 - Do not hard-code font sizes where the desktop's own font scaling should apply. Users change their interface font size and the theme must survive it.

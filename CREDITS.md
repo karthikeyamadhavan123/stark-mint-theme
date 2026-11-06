@@ -13,7 +13,7 @@ Some entries are marked **Needs maintainer verification**. Those are genuinely u
 |                |                                                                                                     |
 | -------------- | --------------------------------------------------------------------------------------------------- |
 | Project        | **Everforest-GTK-Theme** by Fausto-Korpsvart                                                        |
-| Repository     | <https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme>                                            |
+| Repository     | <https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme>                                          |
 | Variant used   | `Everforest-Green-Dark`, plus the `-hdpi` and `-xhdpi` Xfwm folders                                 |
 | Licence        | **GNU General Public License version 3**                                                            |
 | Licence source | The `LICENSE` file in the upstream repository, and the GPL-3.0 licence shown on the repository page |
@@ -54,15 +54,13 @@ Note on the GNOME Shell stylesheet: its header states LGPL 2.1, not GPL-3.0. The
 
 ## 3. Fonts — `fonts/`
 
-| Font                  | Licence                   | Licence file in this repository |
-| --------------------- | ------------------------- | ------------------------------- |
-| Barlow                | SIL Open Font License 1.1 | `fonts/OFL-Barlow.txt`          |
-| Barlow Semi Condensed | SIL Open Font License 1.1 | `fonts/OFL-Barlow.txt`          |
-| JetBrains Mono        | SIL Open Font License 1.1 | `fonts/OFL-JetBrainsMono.txt`   |
+| Font           | Licence                   | Licence file in this repository |
+| -------------- | ------------------------- | ------------------------------- |
+| JetBrains Mono | SIL Open Font License 1.1 | `fonts/OFL-JetBrainsMono.txt`   |
 
-The fonts were downloaded unmodified from the `google/fonts` repository.
+JetBrains Mono is the only font family bundled with the theme. It was downloaded unmodified from the `google/fonts` repository.
 
-The SIL Open Font License permits bundling and redistribution. It is a separate licence from the root GPL-3.0 and applies to the font files on its own terms. Keep the `OFL-*.txt` files alongside the fonts.
+The SIL Open Font License permits bundling and redistribution. It is a separate licence from the root GPL-3.0 and applies to the font files on its own terms. Keep the `OFL-JetBrainsMono.txt` file alongside the fonts.
 
 ---
 
@@ -73,9 +71,10 @@ These are Stark Mint changes to upstream files. As modifications of a GPL-3.0 wo
 - Every colour in the CSS, SVG, PNG, XML, `gtkrc` and Plank files remapped to the Stark Mint palette.
 - Squarer corner radii.
 - `STARK MINT overrides` blocks appended to `gtk-3.0/*.css`, `gtk-4.0/*.css`, `cinnamon/cinnamon.css` and `gnome-shell/gnome-shell.css`.
+- Typography unified to a single family: every `font-family` declaration in `gtk-3.0/*.css`, `gtk-4.0/*.css`, `cinnamon/cinnamon.css` and `gnome-shell/gnome-shell.css` now names JetBrains Mono, with hierarchy carried by font weight. The font keys set by `install.sh` were changed to match.
 - Rewritten toggle SVGs: `cinnamon/assets/toggle-*.svg` and `gnome-shell/assets/toggle-*.svg`.
 - Window frames: `metacity-1/metacity-theme-1.xml`, `-2.xml` and `-3.xml` edited.
-- New window control assets: `metacity-1/assets/button.svg`, `close-bg.svg`, `close-bg-hover.svg`, `close-bg-pressed.svg`.
+- New window control assets: `metacity-1/assets/button.svg`, `close-bg.svg`, `close-bg-hover.svg`, `close-bg-pressed.svg`, `maximize-bg-hover.svg`, `maximize-bg-pressed.svg`.
 - New thumbnails: `cinnamon/thumbnail.png`, `gtk-3.0/thumbnail.png`, `gtk-4.0/thumbnail.png`, `metacity-1/thumbnail.png`.
 - Rewritten `Stark-Mint/index.theme`.
 
@@ -164,16 +163,16 @@ Modified for Stark Mint in November 2026. See `CHANGELOG.md` for the list of cha
 
 ## 9. Summary of what the root LICENSE covers
 
-| Part of the repository                        | Licence                                               |
-| --------------------------------------------- | ----------------------------------------------------- |
-| Theme files derived from Everforest-GTK-Theme | GPL-3.0, via the root `LICENSE`                       |
-| Stark Mint's modifications to those files     | GPL-3.0, as modifications of a GPL-3.0 work           |
-| `Stark-Mint/gnome-shell/gnome-shell.css`      | LGPL 2.1, per its own header                          |
-| `Stark-Mint/plank/dock.theme`                 | Based on Plank; GPL-3.0                               |
-| Bundled fonts                                 | SIL Open Font License 1.1, per `fonts/OFL-*.txt`      |
-| `install.sh`, documentation, previews         | GPL-3.0, by the maintainer's decision — see section 5 |
-| Wallpaper                                     | GPL-3.0, but distributed separately — see section 7   |
-| `Tela-circle-Dark`, `Everforest-cursors`      | Not bundled; not covered                              |
+| Part of the repository                        | Licence                                                      |
+| --------------------------------------------- | ------------------------------------------------------------ |
+| Theme files derived from Everforest-GTK-Theme | GPL-3.0, via the root `LICENSE`                              |
+| Stark Mint's modifications to those files     | GPL-3.0, as modifications of a GPL-3.0 work                  |
+| `Stark-Mint/gnome-shell/gnome-shell.css`      | LGPL 2.1, per its own header                                 |
+| `Stark-Mint/plank/dock.theme`                 | Based on Plank; GPL-3.0                                      |
+| Bundled fonts                                 | SIL Open Font License 1.1, per `fonts/OFL-JetBrainsMono.txt` |
+| `install.sh`, documentation, previews         | GPL-3.0, by the maintainer's decision — see section 5        |
+| Wallpaper                                     | GPL-3.0, but distributed separately — see section 7          |
+| `Tela-circle-Dark`, `Everforest-cursors`      | Not bundled; not covered                                     |
 
 The root `LICENSE` does **not** automatically cover every file in this repository.
 

@@ -329,10 +329,10 @@ if [[ "$DESKTOP" == *Cinnamon* ]]; then
   set_key org.cinnamon.theme name "$NAME"
   set_key org.gnome.desktop.interface gtk-theme "$NAME"
   if [ "$DO_FONTS" = 1 ]; then
-    set_key org.cinnamon.desktop.interface font-name "Barlow 10"
-    set_key org.cinnamon.desktop.wm.preferences titlebar-font "Barlow Semi Condensed SemiBold 10"
-    set_key org.nemo.desktop font "Barlow 10"
-    set_key org.gnome.desktop.interface font-name "Barlow 10"
+    set_key org.cinnamon.desktop.interface font-name "JetBrains Mono 10"
+    set_key org.cinnamon.desktop.wm.preferences titlebar-font "JetBrains Mono Bold 10"
+    set_key org.nemo.desktop font "JetBrains Mono 10"
+    set_key org.gnome.desktop.interface font-name "JetBrains Mono 10"
     set_key org.gnome.desktop.interface monospace-font-name "JetBrains Mono 10"
   fi
   if [ "$DO_WALL" = 1 ]; then set_key org.cinnamon.desktop.background picture-uri "$WALL_URI"; fi
@@ -347,10 +347,10 @@ elif [[ "$DESKTOP" == *GNOME* ]]; then
     note "GNOME top bar not themed: enable the 'User Themes' extension, then run ./install.sh --apply"
   fi
   if [ "$DO_FONTS" = 1 ]; then
-    set_key org.gnome.desktop.interface font-name "Barlow 10"
-    set_key org.gnome.desktop.interface document-font-name "Barlow 10"
+    set_key org.gnome.desktop.interface font-name "JetBrains Mono 10"
+    set_key org.gnome.desktop.interface document-font-name "JetBrains Mono 10"
     set_key org.gnome.desktop.interface monospace-font-name "JetBrains Mono 10"
-    set_key org.gnome.desktop.wm.preferences titlebar-font "Barlow Semi Condensed SemiBold 10"
+    set_key org.gnome.desktop.wm.preferences titlebar-font "JetBrains Mono Bold 10"
   fi
   if [ "$DO_WALL" = 1 ]; then
     set_key org.gnome.desktop.background picture-uri "$WALL_URI"

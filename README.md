@@ -135,15 +135,15 @@ Cyan is not part of the desktop theme's accent system. It is reserved for limite
 
 ## Typography
 
-The theme references three font families, all bundled under `fonts/`.
+The theme references a single font family, JetBrains Mono, bundled under `fonts/`. Hierarchy comes from weight and size rather than from a second or third family.
 
-| Family                         | Used for                                         |
-| ------------------------------ | ------------------------------------------------ |
-| Barlow                         | General interface text, menus, labels, body copy |
-| Barlow Semi Condensed SemiBold | Title bars and headings                          |
-| JetBrains Mono                 | Terminals, file sizes, timestamps, clock         |
+| Weight                 | Used for                                                  |
+| ---------------------- | --------------------------------------------------------- |
+| JetBrains Mono Regular | General interface text, menus, labels, body copy          |
+| JetBrains Mono Medium  | Selected and active labels                                |
+| JetBrains Mono Bold    | Title bars, headings, calendar month and current-day label |
 
-When you let the installer change your desktop settings, it sets the interface font to Barlow 10, the title bar font to Barlow Semi Condensed SemiBold 10, and the monospace font to JetBrains Mono 10. You can change these afterwards without breaking the theme.
+When you let the installer change your desktop settings, it sets the interface font to JetBrains Mono 10, the title bar font to JetBrains Mono Bold 10, and the monospace font to JetBrains Mono 10. You can change these afterwards without breaking the theme.
 
 ---
 
@@ -157,7 +157,7 @@ When you let the installer change your desktop settings, it sets the interface f
 - Refined Metacity/Muffin close and maximize/restore button styling.
 - Xfwm window decorations, with HiDPI and extra-HiDPI variants.
 - A Plank dock theme.
-- Bundled Barlow and JetBrains Mono fonts.
+- Bundled JetBrains Mono font.
 - An installer and uninstaller with backups.
 - A matching wallpaper, distributed separately.
 
@@ -316,7 +316,7 @@ These changes are not installed or modified by the Stark Mint theme installer.
 | `Stark-Mint/`       | Main theme: GTK 2, GTK 3, GTK 4, Cinnamon, GNOME Shell, Metacity, Xfwm, Plank |
 | `Stark-Mint-hdpi/`  | HiDPI Xfwm window decorations                                                 |
 | `Stark-Mint-xhdpi/` | Extra-HiDPI Xfwm window decorations                                           |
-| `fonts/`            | Bundled Barlow and JetBrains Mono fonts and their licences                    |
+| `fonts/`            | Bundled JetBrains Mono font and its licence                                   |
 | `preview/`          | Screenshots and the design reference sheet                                    |
 | `install.sh`        | Installer and uninstaller                                                     |
 | `fastfetch/`        | Fastfetch configuration and custom ASCII logo                                 |
@@ -327,7 +327,7 @@ These changes are not installed or modified by the Stark Mint theme installer.
 
 ### Bundled
 
-Fonts only. Barlow, Barlow Semi Condensed and JetBrains Mono ship with the theme under the SIL Open Font License 1.1.
+Fonts only. JetBrains Mono ships with the theme under the SIL Open Font License 1.1.
 
 ### The wallpaper
 

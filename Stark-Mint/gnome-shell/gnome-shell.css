@@ -6080,7 +6080,7 @@ StWidget.focused .app-grid-running-dot {
  * ===================================================================== */
 
 stage {
-  font-family: "Barlow", "Cantarell", sans-serif;
+  font-family: "JetBrains Mono", monospace;
 }
 
 #panel {

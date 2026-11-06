@@ -2742,7 +2742,7 @@ StScrollBar StButton#hhandle:active {
  * ===================================================================== */
 
 stage {
-  font-family: "Barlow", "Noto Sans", sans-serif;
+  font-family: "JetBrains Mono", monospace;
   color: #ebe8e2;
 }
 
@@ -2803,8 +2803,8 @@ stage {
 }
 
 #panelLeft > .applet-box:first-child .applet-label {
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: bold;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
@@ -2938,8 +2938,8 @@ stage {
 }
 
 .menu-selected-app-title {
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-weight: bold;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
   color: #ebe8e2;
 }
 
@@ -3046,7 +3046,8 @@ stage {
 
 .calendar-today-day-label,
 .calendar-month-label {
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
 }
 
 .calendar-today-date-label {
